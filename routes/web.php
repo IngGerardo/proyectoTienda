@@ -10,6 +10,9 @@
 | to using a Closure or controller method. Build something great!
 |
 */
+Route::get('/RegistroUsuario','usuarioController@registrarUsuarios');
+
+Route::post('/guardarUsuario','usuarioController@guardarUsuario');
 
 Route::get('/welcome', function () {
     return view('welcome');
