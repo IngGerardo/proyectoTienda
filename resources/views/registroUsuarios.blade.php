@@ -5,7 +5,7 @@
 @stop
 
 @section ('contenido')
-<br><br>
+
 			<div class="col-xs-12">
 				<div class="panel panel-primary">
 					<div class="panel-heading">
