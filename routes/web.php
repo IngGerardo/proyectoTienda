@@ -14,14 +14,16 @@ Route::get('/RegistroUsuario','usuarioController@registrarUsuarios');
 
 Route::post('/guardarUsuario','usuarioController@guardarUsuario');
 
+Route::get('/','articulosController@categorias');
+
 Route::get('/welcome', function () {
     return view('welcome');
 });
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('principal');
 });
-
+*/
 
 Auth::routes();
 

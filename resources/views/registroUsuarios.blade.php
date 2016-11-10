@@ -1,7 +1,7 @@
 @extends ('master')
 
 @section ('encabezado')
-<script type="text/javascript"> document.getElementById("email").value="";</script>
+
 @stop
 
 @section ('contenido')

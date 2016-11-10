@@ -5,13 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\usuarios;
+use App\categorias;
 
 class usuarioController extends Controller
 {
     public function registrarUsuarios()
 	{
-		
-		return view('registroUsuarios');
+		$categorias = categorias::all();
+		return view('registroUsuarios' , compact('categorias'));
 	}
 
 	public function guardarUsuario(Request $request){

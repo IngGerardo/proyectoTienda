@@ -101,74 +101,52 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<li class="active"><a href="{{url('/')}}" class="act">Home</a></li>	
 									<!-- Mega Menu -->
 									<li class="dropdown">
-										<a href="#" class="dropdown-toggle" data-toggle="dropdown">Women<b class="caret"></b></a>
+										<a href="#" class="dropdown-toggle" data-toggle="dropdown">Mujeres<b class="caret"></b></a>
 										<ul class="dropdown-menu multi-column columns-3">
 											<div class="row">
 												<div class="col-sm-3  multi-gd-img">
 													<ul class="multi-column-dropdown">
-														<h6>Submenu1</h6>
-														<li><a href="{{url('/products')}}">Clothing</a></li>
-														<li><a href="{{url('/products')}}">Wallets</a></li>
-														<li><a href="{{url('/products')}}">Shoes</a></li>
-														<li><a href="{{url('/products')}}">Watches</a></li>
-														<li><a href="{{url('/products')}}"> Underwear </a></li>
-														<li><a href="{{url('/products')}}">Accessories</a></li>
+														<h6>Categorias</h6>
+														
+														 @foreach ($categorias as $c)
+									                    <li>
+									                        
+									                        {{$c->nombre}} 
+									                        
+									                    </li>
+									                    
+									                    @endforeach
 													</ul>
 												</div>
-												<div class="col-sm-3  multi-gd-img">
-													<ul class="multi-column-dropdown">
-														<h6>Submenu2</h6>
-														<li><a href="{{url('/products')}}">Sunglasses</a></li>
-														<li><a href="{{url('/products')}}">Wallets,Bags</a></li>
-														<li><a href="{{url('/products')}}">Footwear</a></li>
-														<li><a href="{{url('/products')}}">Watches</a></li>
-														<li><a href="{{url('/products')}}">Accessories</a></li>
-														<li><a href="{{url('/products')}}">Jewellery</a></li>
-													</ul>
-												</div>
-												<div class="col-sm-3  multi-gd-img">
-														<a href="{{url('/products')}}"><img src="images/woo.jpg" alt=" "/></a>
-												</div> 
-												<div class="col-sm-3  multi-gd-img">
-														<a href="{{url('/products')}}"><img src="images/woo1.jpg" alt=" "/></a>
-												</div>
-												<div class="clearfix"></div>
+												
 											</div>
 										</ul>
 									</li>
 									<li class="dropdown">
-										<a href="#" class="dropdown-toggle" data-toggle="dropdown">Men <b class="caret"></b></a>
+										<a href="#" class="dropdown-toggle" data-toggle="dropdown">Hombres <b class="caret"></b></a>
 										<ul class="dropdown-menu multi-column columns-3">
 											<div class="row">
 												<div class="col-sm-3  multi-gd-img">
 													<ul class="multi-column-dropdown">
-														<h6>Submenu1</h6>
-														<li><a href="{{url('/products')}}">Clothing</a></li>
+														<h6>Categorias</h6>
+														
+														 @foreach ($categorias as $c)
+									                    <li>
+									                        
+									                        {{$c->nombre}} 
+									                        
+									                    </li>
+									                    
+									                    @endforeach
+														<!--<li><a href="{{url('/products')}}">Clothing</a></li>
 														<li><a href="{{url('/products')}}">Wallets</a></li>
 														<li><a href="{{url('/products')}}">Shoes</a></li>
 														<li><a href="{{url('/products')}}">Watches</a></li>
 														<li><a href="{{url('/products')}}"> Underwear </a></li>
-														<li><a href="{{url('/products')}}">Accessories</a></li>
+														<li><a href="{{url('/products')}}">Accessories</a></li>-->
 													</ul>
 												</div>
-												<div class="col-sm-3  multi-gd-img">
-													<ul class="multi-column-dropdown">
-														<h6>Submenu2</h6>
-														<li><a href="{{url('/products')}}">Sunglasses</a></li>
-														<li><a href="{{url('/products')}}">Wallets,Bags</a></li>
-														<li><a href="{{url('/products')}}">Footwear</a></li>
-														<li><a href="{{url('/products')}}">Watches</a></li>
-														<li><a href="{{url('/products')}}">Accessories</a></li>
-														<li><a href="{{url('/products')}}">Jewellery</a></li>
-													</ul>
-												</div>
-												<div class="col-sm-3  multi-gd-img">
-														<a href="{{url('/products1')}}"><img src="images/woo3.jpg" alt=" "/></a>
-												</div> 
-												<div class="col-sm-3  multi-gd-img">
-														<a href="{{url('/products1')}}"><img src="images/woo4.jpg" alt=" "/></a>
-												</div>
-												<div class="clearfix"></div>
+												
 											</div>
 										</ul>
 									</li>
