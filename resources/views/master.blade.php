@@ -3,20 +3,20 @@
 <head>
 <title>New Shop a E-Commerce Online Shopping Category Flat Bootstrap Responsive Website Template</title>
 <!--css-->
-<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all"/>
-<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
-<link href="css/font-awesome.css" rel="stylesheet">
+<link rel="stylesheet" href="{{ asset("css/bootstrap.css") }}">
+<link  rel="stylesheet" href="{{ asset("css/style.css") }}">
+<link  rel="stylesheet" href="{{ asset("css/font-awesome.css") }}">
 <!--css-->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="New Shop Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<script src="js/jquery.min.js"></script>
+<script src="{{ asset("js/jquery.min.js") }}"></script>
 <!--search jQuery-->
-	<script src="js/main.js"></script>
+	<script src="{{ asset("js/main.js") }}"></script>
 <!--search jQuery-->
-<script src="js/responsiveslides.min.js"></script>
+<script src="{{ asset("js/responsiveslides.min.js") }}"></script>
  <script>
     $(function () {
       $("#slider").responsiveSlides({
@@ -29,13 +29,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     });
  </script>
  <!--mycart-->
-<script type="text/javascript" src="js/bootstrap-3.1.1.min.js"></script>
+<script type="text/javascript" src="{{ asset("js/bootstrap-3.1.1.min.js") }}"></script>
  <!-- cart -->
-<script src="js/simpleCart.min.js"></script>
+<script src="{{ asset("js/simpleCart.min.js") }}"></script>
 <!-- cart -->
   <!--start-rate-->
-<script src="js/jstarbox.js"></script>
-	<link rel="stylesheet" href="css/jstarbox.css" type="text/css" media="screen" charset="utf-8" />
+<script src="{{ asset("js/jstarbox.js") }}"></script>
+	<link rel="stylesheet" type="text/css" media="screen" charset="utf-8"  href="{{  asset("css/jstarbox.css") }}">
 		<script type="text/javascript">
 			jQuery(function() {
 			jQuery('.starbox').each(function() {
@@ -102,17 +102,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<!-- Mega Menu -->
 									<li class="dropdown">
 										<a href="#" class="dropdown-toggle" data-toggle="dropdown">Mujeres<b class="caret"></b></a>
-										<ul class="dropdown-menu multi-column columns-3">
+										<ul class="dropdown-menu" role="menu">
 											<div class="row">
-												<div class="col-sm-3  multi-gd-img">
+												<div class="col-sm-3  ">
 													<ul class="multi-column-dropdown">
-														<h6>Categorias</h6>
+														
 														
 														 @foreach ($categorias as $c)
-									                    <li>
-									                        
-									                        {{$c->nombre}} 
-									                        
+									                    <li >
+									                        <a href="{{ url('/categorias') }}/{{ $c->id }}">
+									                        <b >{{$c->nombre}}</b> 
+									                        </a>
 									                    </li>
 									                    
 									                    @endforeach
@@ -124,16 +124,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									</li>
 									<li class="dropdown">
 										<a href="#" class="dropdown-toggle" data-toggle="dropdown">Hombres <b class="caret"></b></a>
-										<ul class="dropdown-menu multi-column columns-3">
+										<ul class="dropdown-menu" role="menu">
 											<div class="row">
-												<div class="col-sm-3  multi-gd-img">
+												<div class="col-sm-3  ">
 													<ul class="multi-column-dropdown">
-														<h6>Categorias</h6>
+														
 														
 														 @foreach ($categorias as $c)
 									                    <li>
-									                        
-									                        {{$c->nombre}} 
+									                        <a href="{{ url('/categoriash') }}/{{ $c->id }}">
+									                        <b>{{$c->nombre}}</b>
+									                        </a>
 									                        
 									                    </li>
 									                    

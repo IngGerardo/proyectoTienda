@@ -20,6 +20,9 @@ Route::get('/welcome', function () {
     return view('welcome');
 });
 
+Route::get('/categorias/{id}','articulosController@articuloxcategoria');
+Route::get('/categoriash/{id}','articulosController@articuloxcategoriah');
+
 /*Route::get('/', function () {
     return view('principal');
 });
