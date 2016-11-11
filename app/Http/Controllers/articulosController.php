@@ -31,8 +31,9 @@ public function articuloxcategoria($id)
 		->join('articulos','cat_articulo.id_articulo','=','articulos.id')
         ->select('categorias.nombre as categoriaNombre','categorias.id as categoriaId','articulos.descripcion','articulos.id','articulos.precio', 'articulos.tipo')
         ->where('categorias.id','=',$id)  
-        ->where('articulos.tipo', '=', 1)
-        ->orwhere('articulos.tipo', '=', 3)
+        ->where('articulos.tipo', '=', '1')
+        ->orwhere('articulos.tipo', '=', '3')
+        
         ->get();
 
         $cate=DB::table('categorias')->where('id','=',$id)->select('nombre')->first();
@@ -53,6 +54,7 @@ public function articuloxcategoriah($id)
         ->where('categorias.id','=',$id)  
         ->where('articulos.tipo', '=', '2')
         ->orwhere('articulos.tipo', '=', '3')
+        
         ->get();
 
         $cate=DB::table('categorias')->where('id','=',$id)->select('nombre')->first();
