@@ -668,6 +668,20 @@
 				</div>
 			<!--new-arrivals-->
 		</div>
+		<div class="container" align="center">
+                <div class="row">
+                <div id="fb-root"></div>
+                        <script>(function(d, s, id) {
+                          var js, fjs = d.getElementsByTagName(s)[0];
+                          if (d.getElementById(id)) return;
+                          js = d.createElement(s); js.id = id;
+                          js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.8";
+                          fjs.parentNode.insertBefore(js, fjs);
+                        }(document, 'script', 'facebook-jssdk'));</script>
+                    </div>
+
+                    <div class="fb-comments" data-width="1125" data-href="https://www.facebook.com/starky.miranda" data-numposts="5"></div>
+            </div>
 		<!--content-->
 		<!---footer--->
 					<div class="footer-w3l">

@@ -31,3 +31,17 @@ Route::get('/categoriash/{id}','articulosController@articuloxcategoriah');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+Route::get('/registroCategorias', function () {
+    return view('registroCategorias');
+});
+
+Route::post('/guardarCategoria','categoriaController@guardar');
+
+Route::get('/consultaCategorias','categoriaController@consultar');
+
+Route::get('/eliminarCategorias/{id}','categoriaController@eliminar');
+
+Route::get('/eliminarCategorias/{id}','categoriaController@eliminar');
+
+

@@ -70,6 +70,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="top-right">
 					<ul>
 						@if (Route::has('login'))
+							<li><a href="{{url('/consultaCategorias')}}">Categorias</a></li>
 		                	<li><a href="{{url('/checkout')}}">Checkout</a></li>
 		                    <li><a href="{{url('/login')}}">Login</a></li>
 		                    <li><a href="{{url('/RegistroUsuario')}}"> Registrarse </a></li>
