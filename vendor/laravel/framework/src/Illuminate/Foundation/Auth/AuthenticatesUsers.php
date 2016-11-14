@@ -5,6 +5,7 @@ namespace Illuminate\Foundation\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Lang;
+use App\categorias;
 
 trait AuthenticatesUsers
 {
@@ -17,7 +18,8 @@ trait AuthenticatesUsers
      */
     public function showLoginForm()
     {
-        return view('auth.login');
+        $categorias = categorias::all();
+        return view('auth.login', compact('categorias'));
     }
 
     /**

@@ -10,18 +10,12 @@
 | to using a Closure or controller method. Build something great!
 |
 */
-Route::get('/RegistroUsuario','usuarioController@registrarUsuarios');
-
-Route::post('/guardarUsuario','usuarioController@guardarUsuario');
 
 Route::get('/','articulosController@categorias');
 
-Route::get('/welcome', function () {
+/*Route::get('/welcome', function () {
     return view('welcome');
-});
-
-Route::get('/categorias/{id}','articulosController@articuloxcategoria');
-Route::get('/categoriash/{id}','articulosController@articuloxcategoriah');
+});*/
 
 /*Route::get('/', function () {
     return view('principal');
@@ -30,16 +24,32 @@ Route::get('/categoriash/{id}','articulosController@articuloxcategoriah');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
-
-Route::get('/registroCategorias', function () {
-    return view('registroCategorias');
+Route::group(['middleware' => ['admin']], function () {
+    Route::get('/admin', 'HomeController@admin');
 });
 
-Route::post('/guardarCategoria','categoriaController@guardar');
+Route::group(['middleware' => ['auth']], function () {
 
-Route::get('/consultaCategorias','categoriaController@consultar');
+	Route::get('/home', 'HomeController@index');
 
-Route::get('/eliminarCategorias/{id}','categoriaController@eliminar');
+	Route::get('/registroCategorias', function () {
+	    return view('registroCategorias');
+	});
 
-Route::get('/eliminarCategorias/{id}','categoriaController@eliminar');
+	Route::post('/guardarCategoria','categoriaController@guardar');
+
+	Route::get('/consultaCategorias','categoriaController@consultar');
+
+	Route::get('/eliminarCategorias/{id}','categoriaController@eliminar');
+
+	Route::get('/eliminarCategorias/{id}','categoriaController@eliminar');
+
+	Route::get('/categorias/{id}','articulosController@articuloxcategoria');
+
+	Route::get('/categoriash/{id}','articulosController@articuloxcategoriah');
+
+	Route::get('/RegistroUsuario','usuarioController@registrarUsuarios');
+
+	Route::post('/guardarUsuario','usuarioController@guardarUsuario');
+
+});
