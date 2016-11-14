@@ -103,52 +103,47 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<!-- Mega Menu -->
 									<li class="dropdown">
 										<a href="#" class="dropdown-toggle" data-toggle="dropdown">Mujeres<b class="caret"></b></a>
-										<ul class="dropdown-menu" role="menu">
+										<ul class="dropdown-menu multi-column columns-3">
 											<div class="row">
-												<div class="col-sm-3  ">
+												<div class="col-sm-3  multi-gd-img">
 													<ul class="multi-column-dropdown">
-														
-														
+														<h6>Categorias</h6>
 														 @foreach ($categorias as $c)
-									                    <li >
-									                        <a href="{{ url('/categorias') }}/{{ $c->id }}">
-									                        <b >{{$c->nombre}}</b> 
-									                        </a>
-									                    </li>
-									                    
-									                    @endforeach
+														<li><a href="{{url('/categorias')}}/{{ $c->id }}">{{$c->nombre}}</a></li>
+														 @endforeach
 													</ul>
 												</div>
-												
+					
+												<div class="col-sm-3  multi-gd-img">
+														<img src="{{ asset("images/woo.jpg") }}" alt=" "/>
+												</div> 
+												<div class="col-sm-3  multi-gd-img">
+														<img src="{{ asset("images/woo1.jpg") }}" alt=" " />
+												</div>
+												<div class="clearfix"></div>
 											</div>
 										</ul>
 									</li>
+
 									<li class="dropdown">
 										<a href="#" class="dropdown-toggle" data-toggle="dropdown">Hombres <b class="caret"></b></a>
-										<ul class="dropdown-menu" role="menu">
+										<ul class="dropdown-menu multi-column columns-3">
 											<div class="row">
-												<div class="col-sm-3  ">
+												<div class="col-sm-3  multi-gd-img">
 													<ul class="multi-column-dropdown">
-														
-														
+														<h6>Categorias</h6>
 														 @foreach ($categorias as $c)
-									                    <li>
-									                        <a href="{{ url('/categoriash') }}/{{ $c->id }}">
-									                        <b>{{$c->nombre}}</b>
-									                        </a>
-									                        
-									                    </li>
-									                    
+									                    <li><a href="{{ url('/categoriash') }}/{{ $c->id }}"><b>{{$c->nombre}}</b></a></li>
 									                    @endforeach
-														<!--<li><a href="{{url('/products')}}">Clothing</a></li>
-														<li><a href="{{url('/products')}}">Wallets</a></li>
-														<li><a href="{{url('/products')}}">Shoes</a></li>
-														<li><a href="{{url('/products')}}">Watches</a></li>
-														<li><a href="{{url('/products')}}"> Underwear </a></li>
-														<li><a href="{{url('/products')}}">Accessories</a></li>-->
 													</ul>
 												</div>
-												
+													<div class="col-sm-3  multi-gd-img">
+														<img src="{{ asset("images/woo3.jpg") }}" alt=" "/>
+												</div> 
+												<div class="col-sm-3  multi-gd-img">
+														<img src="{{ asset("images/woo4.jpg") }}" alt=" "/>
+												</div>
+												<div class="clearfix"></div>
 											</div>
 										</ul>
 									</li>
@@ -173,7 +168,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<a href="{{url('/checkout')}}">
 									<h3> <div class="total">
 										<span class="simpleCart_total"></span> (<span id="simpleCart_quantity" class="simpleCart_quantity"></span> items)</div>
-										<img src="images/bag.png" alt="" />
+										<img src="{{ asset("images/bag.png") }}" alt="" />
 									</h3>
 								</a>
 								<p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p>

@@ -1,5 +1,26 @@
 @extends ('master') @section ('encabezado') @stop @section ('contenido')
+<style type="text/css">
+    .ec-stars-wrapper {
+    display: inline-block;
+}
+.ec-stars-wrapper a {
+    text-decoration: none;
+    display: inline-block;
+    font-size: 32px;
+    font-size: 2rem;
+    
+    color: #888;
+}
 
+.ec-stars-wrapper:hover a {
+    color: rgb(255, 246, 89);
+}
+.ec-stars-wrapper > a:hover ~ a {
+    color: #888; 
+}
+
+</style>
+<br>
 <div class="container-fluid">
     <div class="row">
         @foreach($articulo as $a)
@@ -7,7 +28,10 @@
             <div class="form-group">
                 <a href="" data-target="#{{ $a->id }}" data-toggle="modal" data-descripcion="{{ $a->descripcion }}" data-precio="{{ $a->precio }}"
                     title="{{ $a->descripcion }}">
-            <img src="../images/{{ $a->id }}.png" width="80%" class="img-responsive imagen carta"></a>
+            <img src="../images/{{ $a->id }}.png" width="50%" class="img-responsive imagen carta"></a>
+                <h4><b>Descripción</b></h4>
+                <p>{{ $a->descripcion }}</p>
+                <p><b>Precio:</b> ${{$a->precio}}.00</p>
             </div>
         </div>
 
@@ -32,10 +56,9 @@
                                             <h4><b>Descripción</b></h4>
                                             <p>{{ $a->descripcion }}</p>
                                             <p>Precio: ${{$a->precio}}.00</p>
-
                                         </div>
                                         <div class="col-md-12" align="center">
-                                            <p><img src="../images/{{ $a->id }}.png" width="80%" class="img-responsive imagen carta"></a>
+                                            <p><img src="../images/{{ $a->id }}.png" width="40%" class="img-responsive imagen carta"></a>
                                             </p>
                                             <form action="{{ url('/agregarCompra') }}" method="POST" style="display:inline;">
                                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">

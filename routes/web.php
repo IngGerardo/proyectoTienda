@@ -43,5 +43,3 @@ Route::get('/consultaCategorias','categoriaController@consultar');
 Route::get('/eliminarCategorias/{id}','categoriaController@eliminar');
 
 Route::get('/eliminarCategorias/{id}','categoriaController@eliminar');
-
-
