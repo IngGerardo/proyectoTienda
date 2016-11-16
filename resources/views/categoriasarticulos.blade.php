@@ -29,6 +29,8 @@
                 <a href="" data-target="#{{ $a->id }}" data-toggle="modal" data-descripcion="{{ $a->descripcion }}" data-precio="{{ $a->precio }}"
                     title="{{ $a->descripcion }}">
             <img src="../images/{{ $a->id }}.png" width="50%" class="img-responsive imagen carta"></a>
+            <a href="{{url('/like')}}/{{ $a->id }}/{{ $a->categoriaId }}" ><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"> {{ $a->likee }}</span></a>
+            <a href="{{url('/dislike')}}/{{ $a->id }}/{{ $a->categoriaId }}" ><span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"> {{ $a->dislike }}</span></a>
                 <h4><b>Descripción</b></h4>
                 <p>{{ $a->descripcion }}</p>
                 <p><b>Precio:</b> ${{$a->precio}}.00</p>
