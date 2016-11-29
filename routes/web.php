@@ -50,6 +50,11 @@ Route::group(['middleware' => ['auth']], function () {
 
 	Route::post('/guardarUsuario','usuarioController@guardarUsuario');
 
+	Route::get('/like/{id}/{categoriaId}','categoriaController@like');
+
+	Route::get('/dislike/{id}/{categoriaId}','categoriaController@dislike');
+
+
 });
 
 Route::get('/categorias/{id}','articulosController@articuloxcategoria');

@@ -4,7 +4,27 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 --*/
-
+.fondo{
+/*  background-color: #66c0b7;*/
+    border:none !important;
+    background-color:#66c0b7;
+    border-radius: 10%; 
+}
+p{
+font-family: cursive;   
+font-size: 120%;
+}
+.carta{
+    text-align: center;
+    vertical-align: top;
+    margin-left: 0%;
+    display: inline-block;
+    width: 55%;
+    transition:1s all;
+}
+.carta:hover{
+    transform:scale(1.1);
+}
 body a{
     transition:0.5s all;
 	-webkit-transition:0.5s all;
