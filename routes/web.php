@@ -44,12 +44,14 @@ Route::group(['middleware' => ['auth']], function () {
 
 	Route::get('/eliminarCategorias/{id}','categoriaController@eliminar');
 
-	Route::get('/categorias/{id}','articulosController@articuloxcategoria');
-
-	Route::get('/categoriash/{id}','articulosController@articuloxcategoriah');
+	
 
 	Route::get('/RegistroUsuario','usuarioController@registrarUsuarios');
 
 	Route::post('/guardarUsuario','usuarioController@guardarUsuario');
 
 });
+
+Route::get('/categorias/{id}','articulosController@articuloxcategoria');
+
+	Route::get('/categoriash/{id}','articulosController@articuloxcategoriah');

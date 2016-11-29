@@ -32,7 +32,7 @@ public function articuloxcategoria($id)
         ->select('categorias.nombre as categoriaNombre','categorias.id as categoriaId','articulos.descripcion','articulos.id','articulos.precio', 'articulos.tipo')
         ->where('categorias.id', '=', $id)
         ->where('articulos.tipo', '=', '1')
-        ->orwhere('articulos.tipo', '=', '3')
+        
         
         ->get();
 
@@ -53,7 +53,7 @@ public function articuloxcategoriah($id)
         ->select('categorias.nombre as categoriaNombre','categorias.id as categoriaId','articulos.descripcion','articulos.id','articulos.precio', 'articulos.tipo')
         ->where('categorias.id', '=', $id)
         ->where('articulos.tipo', '=', '2')
-        ->orwhere('articulos.tipo', '=', '3')
+        
         
         ->get();
 
