@@ -27,10 +27,10 @@ public function articuloxcategoria($id)
 	{	
 		$categorias = categorias::all();
 		$articulo = DB::table('categorias')
-		->join('cat_articulo','cat_articulo.id_categoria','=', $id)
+		->join('cat_articulo','cat_articulo.id_categoria','=', 'categorias.id')
 		->join('articulos','cat_articulo.id_articulo','=','articulos.id')
-        ->select('categorias.nombre as categoriaNombre','categorias.id as categoriaId','articulos.descripcion','articulos.id','articulos.precio', 'articulos.tipo')
-        
+        ->select('categorias.nombre as categoriaNombre','categorias.id as categoriaId','articulos.descripcion','articulos.id','articulos.precio', 'articulos.tipo','articulos.likee','articulos.dislike')
+        ->where('categorias.id', '=', $id)
         ->where('articulos.tipo', '=', '1')
         ->orwhere('articulos.tipo', '=', '3')
         
@@ -48,10 +48,10 @@ public function articuloxcategoriah($id)
 	{	
 		$categorias = categorias::all();
 		$articulo = DB::table('categorias')
-		->join('cat_articulo','cat_articulo.id_categoria','=', $id)
+		->join('cat_articulo','cat_articulo.id_categoria','=', 'categorias.id')
 		->join('articulos','cat_articulo.id_articulo','=','articulos.id')
-        ->select('categorias.nombre as categoriaNombre','categorias.id as categoriaId','articulos.descripcion','articulos.id','articulos.precio', 'articulos.tipo')
-        
+        ->select('categorias.nombre as categoriaNombre','categorias.id as categoriaId','articulos.descripcion','articulos.id','articulos.precio', 'articulos.tipo','articulos.likee','articulos.dislike')
+        ->where('categorias.id', '=', $id)
         ->where('articulos.tipo', '=', '2')
         ->orwhere('articulos.tipo', '=', '3')
         

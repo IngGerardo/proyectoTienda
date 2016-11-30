@@ -26,4 +26,42 @@ class categoriaController extends Controller
         categorias::find($id)->delete();
         return Redirect('/consultaCategorias');
     }
+
+    public function like($id,$idp){
+        $cate = categorias::all();
+        $arti = DB::table('articulos')
+        ->select('articulos.likee as puntos')
+        ->where('id', '=', $id)
+        ->first();
+
+        $ca='1';
+
+        $pol=$arti->puntos + $ca;
+
+        $ite=DB::table('articulos')
+        ->where('id', $id)     
+        ->update(['likee' => $pol]);
+        
+        return redirect('/categorias/'.$idp);
+
+    }
+
+    public function dislike($id,$idp){
+        $cate = categorias::all();
+        $arti = DB::table('articulos')
+        ->select('articulos.dislike as punto')
+        ->where('id', '=', $id)
+        ->first();
+
+        $ca='1';
+
+        $pol=$arti->punto + $ca;
+
+        $ite=DB::table('articulos')
+        ->where('id', $id)     
+        ->update(['dislike' => $pol]);
+        
+        return redirect('/categorias/'.$idp);
+
+    }
 }
