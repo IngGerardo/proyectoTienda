@@ -57,6 +57,14 @@ Route::group(['middleware' => ['auth']], function () {
 
 });
 
+
+Route::post('/importar','ExcelController@importarExcel');
+Route::get('/registraArticulos','ExcelController@registraArticulos');
+Route::get('/importarCSV','ExcelController@importarCSV');
+
+
+
 Route::get('/categorias/{id}','articulosController@articuloxcategoria');
 
 	Route::get('/categoriash/{id}','articulosController@articuloxcategoriah');
+	Route::post('/guardarArticulos','articulosController@guardarArticulos');
