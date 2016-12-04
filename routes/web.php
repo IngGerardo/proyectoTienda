@@ -59,10 +59,12 @@ Route::group(['middleware' => ['auth']], function () {
 
 
 Route::post('/importar','ExcelController@importarExcel');
+Route::post('/actualizarCatArticulo/{id}','categoriaController@actualizarCatArticulo');
 Route::get('/registraArticulos','ExcelController@registraArticulos');
 Route::get('/importarCSV','ExcelController@importarCSV');
+Route::get('/editarArticulos', 'articulosController@editar');
 
-
+Route::get('/asignarCategoria/{id}', 'categoriaController@asignarCategoria');
 
 Route::get('/categorias/{id}','articulosController@articuloxcategoria');
 

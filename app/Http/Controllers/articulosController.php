@@ -20,7 +20,11 @@ public function categorias(){
 
 
 }
-
+public function editar(){
+	$categorias = categorias::all();
+	$articulos = articulos::all();
+		return view('editarArticulos', compact('categorias','articulos'));
+}
 public function guardarArticulos(Request $request){
 	$nuevo= new articulos();
     	$nuevo->codigo=$request->input('codigo');

@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use DB;
 use App\categorias;
+use App\cat_articulo;
+use App\articulos;
 
 class categoriaController extends Controller
 {
@@ -63,5 +65,30 @@ class categoriaController extends Controller
         
         return redirect('/categorias/'.$idp);
 
+    }
+
+    public function asignarCategoria($id){
+        $articulo=articulos::find($id);
+
+        return view('asignarCatArt', compact('articulo'));
+    
+    }
+
+    public function actualizarCatArticulo(Request $datos, $id){
+            $cat_articulo = new cat_articulo();
+
+            $existe = cat_articulo::where('id_articulo', '=', $id)->exists();
+            if(!$existe){
+                $cat_articulo->id_categoria=$datos->input('categoria');
+                $cat_articulo->id_articulo=$id;   
+                $cat_articulo->save();
+                return back();
+            }else{
+                $actualizar = DB::table('cat_articulo')->where('id_articulo', '=', $id)->update(['id_categoria' => $datos->input('categoria')]);
+                return back();
+
+            }
+            
+            
     }
 }
