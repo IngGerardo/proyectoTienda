@@ -67,6 +67,8 @@ Route::get('/editarArticulos', 'articulosController@editar');
 Route::get('/asignarCategoria/{id}', 'categoriaController@asignarCategoria');
 
 Route::get('/categorias/{id}','articulosController@articuloxcategoria');
-
-	Route::get('/categoriash/{id}','articulosController@articuloxcategoriah');
-	Route::post('/guardarArticulos','articulosController@guardarArticulos');
+Route::post('/actualizarA/{id}', 'articulosController@actualizarArticuloEd');
+Route::get('/actualizarArticulo/{id}','articulosController@actualizarArticulo');
+Route::get('/categoriash/{id}','articulosController@articuloxcategoriah');
+Route::post('/guardarArticulos','articulosController@guardarArticulos');
+Route::get('/eliminarArticulo/{id}', 'articulosController@eliminarA');

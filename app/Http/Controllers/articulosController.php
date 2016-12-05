@@ -77,5 +77,29 @@ public function articuloxcategoriah($id)
 		return view('categoriasarticulos',compact('articulo','cates','cate', 'categorias'));
 	}
 
+
+public function actualizarArticulo($id){
+	$categorias = categorias::all();
+	    $a = articulos::find($id);
+        return view('actualizarArticulo', compact('a', 'categorias'));
+}
+
+public function actualizarArticuloEd($id, Request $datos){
+$articulo = articulos::find($id);
+    	$articulo->codigo=$datos->input('codigo');
+    	$articulo->precio=$datos->input('precio');
+    	$articulo->descripcion=$datos->input('descripcion');
+    	$articulo->tipo=$datos->input('tipo');
+    	$articulo->save();
+    	return Redirect('/editarArticulos');
+
+}
+
+
+ public function eliminarA($id){
+        articulos::find($id)->delete();
+        return Redirect('/editarArticulos');
+    }
+
 }
 
