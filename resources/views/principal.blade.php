@@ -5,6 +5,12 @@
 
 @section ('contenido')
 <!--banner-->
+<style>.fb_iframe_widget,
+.fb_iframe_widget span,
+.fb_iframe_widget span iframe[style] {
+  min-width: 100% !important;
+  width: 100% !important;
+}</style>
 		<div class="banner-w3">
 			<div class="demo-1">            
 				<div id="example1" class="core-slider core-slider__carousel example_1">
@@ -414,7 +420,7 @@
                         }(document, 'script', 'facebook-jssdk'));</script>
                     </div>
 
-                    <div class="fb-comments" data-width="1125" data-href="https://www.facebook.com/starky.miranda" data-numposts="5"></div>
+                    <div class="fb-comments" data-href="https://www.facebook.com/starky.miranda" data-numposts="5"></div>
             </div>
 		<!--content-->
 		<!---footer-->
