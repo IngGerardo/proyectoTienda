@@ -19,6 +19,8 @@ class CreateArticulosTable extends Migration
             $table->double('precio');
             $table->string('descripcion');
             $table->integer('tipo');
+            $table->integer('likee');
+            $table->integer('dislike');
             $table->timestamps();
         });
     }
