@@ -342,6 +342,7 @@ class ComposerStaticInit0b149f9e7cced0be20e0df397ff96cb1
         'CreateCatArticuloTable' => __DIR__ . '/../..' . '/database/migrations/2016_11_14_033604_create_cat_articulo_table.php',
         'CreateCategoriasTable' => __DIR__ . '/../..' . '/database/migrations/2016_11_14_033517_create_categorias_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
+        'CreateUselikeTable' => __DIR__ . '/../..' . '/database/migrations/2016_11_16_175245_create_uselike_table.php',
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',
         'Cron\\AbstractField' => __DIR__ . '/..' . '/mtdowling/cron-expression/src/Cron/AbstractField.php',
         'Cron\\CronExpression' => __DIR__ . '/..' . '/mtdowling/cron-expression/src/Cron/CronExpression.php',
