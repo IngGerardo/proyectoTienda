@@ -74,9 +74,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		                	<li><a href="{{url('/checkout')}}">Checkout</a></li>
 		                    <li><a href="{{url('/login')}}">Login</a></li>
 		                    <li><a href="{{url('/register')}}"> Registrarse </a></li>
+            			
+            			
             			@endif
 					</ul>
 					</div>
+
 					<div class="clearfix"></div>
 				</div>
 			</div>
@@ -147,10 +150,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											</div>
 										</ul>
 									</li>
-									<li><a href="{{url('/codes')}}">Short Codes</a></li>
-									<li><a href="{{url('/mail')}}">Mail Us</a></li>
+									<li><a href="{{url('/registraArticulos')}}">Registrar Articulos</a></li>
+									<li><a href="{{url('/editarArticulos')}}">Editar Articulos</a></li>
+									<li><a href="{{url('/importarCSV')}}">Importar CSV</a></li>
 								</ul>
 							</div>
+							
 							</nav>
 						</div>
 						<div class="logo-nav-right">

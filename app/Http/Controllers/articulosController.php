@@ -20,6 +20,19 @@ public function categorias(){
 
 
 }
+public function editar(){
+	$categorias = categorias::all();
+	$articulos = articulos::all();
+		return view('editarArticulos', compact('categorias','articulos'));
+}
+public function guardarArticulos(Request $request){
+	$nuevo= new articulos();
+    	$nuevo->codigo=$request->input('codigo');
+    	$nuevo->precio=$request->input('precio');
+    	$nuevo->descripcion=$request->input('descripcion');
+    	$nuevo->tipo=$request->input('tipo');
+    	$nuevo->save();
+}
 
 
 
@@ -32,7 +45,7 @@ public function articuloxcategoria($id)
         ->select('categorias.nombre as categoriaNombre','categorias.id as categoriaId','articulos.descripcion','articulos.id','articulos.precio', 'articulos.tipo','articulos.likee','articulos.dislike')
         ->where('categorias.id', '=', $id)
         ->where('articulos.tipo', '=', '1')
-        ->orwhere('articulos.tipo', '=', '3')
+        
         
         ->get();
 
@@ -53,7 +66,7 @@ public function articuloxcategoriah($id)
         ->select('categorias.nombre as categoriaNombre','categorias.id as categoriaId','articulos.descripcion','articulos.id','articulos.precio', 'articulos.tipo','articulos.likee','articulos.dislike')
         ->where('categorias.id', '=', $id)
         ->where('articulos.tipo', '=', '2')
-        ->orwhere('articulos.tipo', '=', '3')
+        
         
         ->get();
 
