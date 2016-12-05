@@ -65,7 +65,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="header-top">
 				<div class="container">
 					 <div class="top-left">
-						<a href="#"> Help  <i class="glyphicon glyphicon-phone" aria-hidden="true"></i> +0123-456-789</a>
+						<a href="#"> Asistencia telefónica  <i class="glyphicon glyphicon-phone" aria-hidden="true"></i> 7-23-45-67</a>
 					</div>
 					<div class="top-right">
 					<ul>

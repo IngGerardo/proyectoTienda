@@ -53,10 +53,7 @@
 							<div class="ban-top">
 								<img src="images/p1.jpg" class="img-responsive" alt=""/>
 								<div class="ban-text">
-									<h4>Men’s Clothing</h4>
-								</div>
-								<div class="ban-text2 hvr-sweep-to-top">
-									<h4>50% <span>Off/-</span></h4>
+									<h4>Ropa para caballero</h4>
 								</div>
 							</div>
 						</div>
@@ -64,7 +61,7 @@
 							<div class="ban-top">
 								<img src="images/p2.jpg" class="img-responsive" alt=""/>
 								<div class="ban-text1">
-									<h4>Women's Clothing</h4>
+									<h4>Ropa para dama</h4>
 								</div>
 							</div>
 							<div class="ban-img">
@@ -72,7 +69,7 @@
 									<div class="ban-top">
 										<img src="images/p3.jpg" class="img-responsive" alt=""/>
 										<div class="ban-text1">
-											<h4>T - Shirt</h4>
+											<h4>Joyeria</h4>
 										</div>
 									</div>
 								</div>
@@ -80,7 +77,7 @@
 									<div class="ban-top">
 										<img src="images/p4.jpg" class="img-responsive" alt=""/>
 										<div class="ban-text1">
-											<h4>Hand Bag</h4>
+											<h4>Accesorios</h4>
 										</div>
 									</div>
 								</div>
@@ -94,7 +91,7 @@
 			<!--new-arrivals-->
 				<div class="new-arrivals-w3agile">
 					<div class="container">
-						<h2 class="tittle">New Arrivals</h2>
+						<h2 class="tittle">Nuevos artículos</h2>
 						<div class="arrivals-grids">
 							<div class="col-md-3 arrival-grid simpleCart_shelfItem">
 								<div class="grid-arr">
@@ -110,11 +107,8 @@
 											</a>		
 										</figure>	
 									</div>
-									<div class="ribben">
-										<p>NEW</p>
-									</div>
 									<div class="ribben1">
-										<p>SALE</p>
+										<p>EN VENTA</p>
 									</div>
 									<div class="block">
 										<div class="starbox small ghosting"> </div>
@@ -123,7 +117,7 @@
 										<h6><a href="{{url('/single')}}">Sed ut perspiciatis unde</a></h6>
 										<span class="size">XL / XXL / S </span>
 										<p ><del>$100.00</del><em class="item_price">$70.00</em></p>
-										<a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
+										<a href="#" data-text="Add To Cart" class="my-cart-b item_add">Agregar al carrito</a>
 									</div>
 								</div>
 							</div>
@@ -141,8 +135,8 @@
 											</a>		
 										</figure>	
 									</div>
-									<div class="ribben2">
-										<p>OUT OF STOCK</p>
+									<div class="ribben1">
+										<p>EN VENTA</p>
 									</div>
 									<div class="block">
 										<div class="starbox small ghosting"> </div>
@@ -151,7 +145,7 @@
 										<h6><a href="{{url('/single')}}">Sed ut perspiciatis unde</a></h6>
 										<span class="size">XL / XXL / S </span>
 										<p ><del>$100.00</del><em class="item_price">$70.00</em></p>
-										<a href="#" data-text="Add To Cart" class=" my-cart-b item_add">Add To Cart</a>
+										<a href="#" data-text="Add To Cart" class=" my-cart-b item_add">Agregar al carrito</a>
 									</div>
 								</div>
 							</div>
@@ -170,7 +164,7 @@
 										</figure>	
 									</div>
 									<div class="ribben1">
-										<p>SALE</p>
+										<p>EN VENTA</p>
 									</div>
 									<div class="block">
 										<div class="starbox small ghosting"> </div>
@@ -179,7 +173,7 @@
 										<h6><a href="{{url('/single')}}">Sed ut perspiciatis unde</a></h6>
 										<span class="size">XL / XXL / S </span>
 										<p ><del>$100.00</del><em class="item_price">$70.00</em></p>
-										<a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
+										<a href="#" data-text="Add To Cart" class="my-cart-b item_add">Agregar al carrito</a>
 									</div>
 								</div>
 							</div>
@@ -197,6 +191,9 @@
 											</a>		
 										</figure>	
 									</div>
+									<div class="ribben1">
+										<p>EN VENTA</p>
+									</div>
 									<div class="block">
 										<div class="starbox small ghosting"> </div>
 									</div>
@@ -204,7 +201,7 @@
 										<h6><a href="{{url('/single')}}">Sed ut perspiciatis unde</a></h6>
 										<span class="size">XL / XXL / S </span>
 										<p ><del>$100.00</del><em class="item_price">$70.00</em></p>
-										<a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
+										<a href="#" data-text="Add To Cart" class="my-cart-b item_add">Agregar al carrito</a>
 									</div>
 								</div>
 							</div>
@@ -216,268 +213,23 @@
 				<!--accessories-->
 			<div class="accessories-w3l">
 				<div class="container">
-					<h3 class="tittle">20% Discount on</h3>
-					<span>TRENDING DESIGNS</span>
+					<span>DISEÑOS EN TENDENCIA</span>
 					<div class="button">
-						<a href="#" class="button1"> Shop Now</a>
-						<a href="#" class="button1"> Quick View</a>
+						<a href="#" class="button1"> Ingrese al sitio</a>
+						<a href="#" class="button1"> Más vendidos</a>
 					</div>
 				</div>
 			</div>
 			<!--accessories-->
-			<!--Products-->
-				<div class="product-agile">
-					<div class="container">
-						<h3 class="tittle1"> New Products</h3>
-						<div class="slider">
-							<div class="callbacks_container">
-								<ul class="rslides" id="slider">
-									<li>	 
-										<div class="caption">
-											<div class="col-md-3 cap-left simpleCart_shelfItem">
-												<div class="grid-arr">
-													<div  class="grid-arrival">
-														<figure>		
-															<a href="{{url('/single')}}">
-																<div class="grid-img">
-																	<img  src="images/p14.jpg" class="img-responsive" alt="">
-																</div>
-																<div class="grid-img">
-																	<img  src="images/p13.jpg" class="img-responsive"  alt="">
-																</div>			
-															</a>		
-														</figure>	
-													</div>
-													<div class="block">
-														<div class="starbox small ghosting"> </div>
-													</div>
-													<div class="women">
-														<h6><a href="{{url('/single')}}">Sed ut perspiciatis unde</a></h6>
-														<span class="size">XL / XXL / S </span>
-														<p ><del>$100.00</del><em class="item_price">$70.00</em></p>
-														<a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
-													</div>
-												</div>
-											</div>
-											<div class="col-md-3 cap-left simpleCart_shelfItem">
-												<div class="grid-arr">
-													<div  class="grid-arrival">
-														<figure>		
-															<a href="{{url('/single')}}">
-																<div class="grid-img">
-																	<img  src="images/p15.jpg" class="img-responsive" alt="">
-																</div>
-																<div class="grid-img">
-																	<img  src="images/p16.jpg" class="img-responsive"  alt="">
-																</div>			
-															</a>		
-														</figure>	
-													</div>
-													<div class="ribben">
-														<p>NEW</p>
-													</div>
-													<div class="block">
-														<div class="starbox small ghosting"> </div>
-													</div>
-													<div class="women">
-														<h6><a href="{{url('/single')}}">Sed ut perspiciatis unde</a></h6>
-														<span class="size">XL / XXL / S </span>
-														<p ><del>$100.00</del><em class="item_price">$70.00</em></p>
-														<a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
-													</div>
-												</div>
-											</div>
-											<div class="col-md-3 cap-left simpleCart_shelfItem">
-												<div class="grid-arr">
-													<div  class="grid-arrival">
-														<figure>		
-															<a href="{{url('/single')}}">
-																<div class="grid-img">
-																	<img  src="images/p18.jpg" class="img-responsive" alt="">
-																</div>
-																<div class="grid-img">
-																	<img  src="images/p17.jpg" class="img-responsive"  alt="">
-																</div>			
-															</a>		
-														</figure>	
-													</div>
-													<div class="ribben1">
-														<p>SALE</p>
-													</div>
-													<div class="block">
-														<div class="starbox small ghosting"> </div>
-													</div>
-													<div class="women">
-														<h6><a href="{{url('/single')}}">Sed ut perspiciatis unde</a></h6>
-														<span class="size">XL / XXL / S </span>
-														<p ><del>$100.00</del><em class="item_price">$70.00</em></p>
-														<a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
-													</div>
-												</div>
-											</div>
-											<div class="col-md-3 cap-left simpleCart_shelfItem">
-												<div class="grid-arr">
-													<div  class="grid-arrival">
-														<figure>		
-															<a href="{{url('/single')}}">
-																<div class="grid-img">
-																	<img  src="images/p20.jpg" class="img-responsive" alt="">
-																</div>
-																<div class="grid-img">
-																	<img  src="images/p19.jpg" class="img-responsive"  alt="">
-																</div>			
-															</a>		
-														</figure>	
-													</div>
-													<div class="ribben">
-														<p>-20%</p>
-													</div>
-													<div class="block">
-														<div class="starbox small ghosting"> </div>
-													</div>
-													<div class="women">
-														<h6><a href="{{url('/single')}}">Sed ut perspiciatis unde</a></h6>
-														<span class="size">XL / XXL / S </span>
-														<p ><del>$100.00</del><em class="item_price">$70.00</em></p>
-														<a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
-													</div>
-												</div>
-											</div>
-											<div class="clearfix"></div>
-										</div>
-									</li>
-									<li>	 
-										<div class="caption">
-											<div class="col-md-3 cap-left simpleCart_shelfItem">
-												<div class="grid-arr">
-													<div  class="grid-arrival">
-														<figure>		
-															<a href="{{url('/single')}}">
-																<div class="grid-img">
-																	<img  src="images/p21.jpg" class="img-responsive" alt="">
-																</div>
-																<div class="grid-img">
-																	<img  src="images/p22.jpg" class="img-responsive"  alt="">
-																</div>			
-															</a>		
-														</figure>	
-													</div>
-													<div class="block">
-														<div class="starbox small ghosting"> </div>
-													</div>
-													<div class="women">
-														<h6><a href="{{url('/single')}}">Sed ut perspiciatis unde</a></h6>
-														<span class="size">XL / XXL / S </span>
-														<p ><del>$100.00</del><em class="item_price">$70.00</em></p>
-														<a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
-													</div>
-												</div>
-											</div>
-											<div class="col-md-3 cap-left simpleCart_shelfItem">
-												<div class="grid-arr">
-													<div  class="grid-arrival">
-														<figure>		
-															<a href="{{url('/single')}}">
-																<div class="grid-img">
-																	<img  src="images/p24.jpg" class="img-responsive" alt="">
-																</div>
-																<div class="grid-img">
-																	<img  src="images/p23.jpg" class="img-responsive"  alt="">
-																</div>			
-															</a>		
-														</figure>	
-													</div>
-													<div class="ribben">
-														<p>NEW</p>
-													</div>
-													<div class="block">
-														<div class="starbox small ghosting"> </div>
-													</div>
-													<div class="women">
-														<h6><a href="{{url('/single')}}">Sed ut perspiciatis unde</a></h6>
-														<span class="size">XL / XXL / S </span>
-														<p ><del>$100.00</del><em class="item_price">$70.00</em></p>
-														<a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
-													</div>
-												</div>
-											</div>
-											<div class="col-md-3 cap-left simpleCart_shelfItem">
-												<div class="grid-arr">
-													<div  class="grid-arrival">
-														<figure>		
-															<a href="{{url('/single')}}">
-																<div class="grid-img">
-																	<img  src="images/p26.jpg" class="img-responsive" alt="">
-																</div>
-																<div class="grid-img">
-																	<img  src="images/p25.jpg" class="img-responsive"  alt="">
-																</div>			
-															</a>		
-														</figure>	
-													</div>
-													<div class="ribben">
-														<p>-75%</p>
-													</div>
-													<div class="block">
-														<div class="starbox small ghosting"> </div>
-													</div>
-													<div class="women">
-														<h6><a href="{{url('/single')}}">Sed ut perspiciatis unde</a></h6>
-														<span class="size">XL / XXL / S </span>
-														<p ><del>$100.00</del><em class="item_price">$70.00</em></p>
-														<a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
-													</div>
-												</div>
-											</div>
-											<div class="col-md-3 cap-left simpleCart_shelfItem">
-												<div class="grid-arr">
-													<div  class="grid-arrival">
-														<figure>		
-															<a href="{{url('/single')}}">
-																<div class="grid-img">
-																	<img  src="images/p10.jpg" class="img-responsive" alt="">
-																</div>
-																<div class="grid-img">
-																	<img  src="images/p9.jpg" class="img-responsive"  alt="">
-																</div>			
-															</a>		
-														</figure>	
-													</div>
-													<div class="ribben">
-														<p>NEW</p>
-													</div>
-													<div class="block">
-														<div class="starbox small ghosting"> </div>
-													</div>
-													<div class="women">
-														<h6><a href="{{url('/single')}}">Sed ut perspiciatis unde</a></h6>
-														<span class="size">XL / XXL / S </span>
-														<p ><del>$100.00</del><em class="item_price">$70.00</em></p>
-														<a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
-													</div>
-												</div>
-											</div>
-											<div class="clearfix"></div>
-										</div>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			<!--Products-->
 			<div class="latest-w3">
 				<div class="container">
-					<h3 class="tittle1">Latest Fashion Trends</h3>
+					<h3 class="tittle1">Últimas tendencias</h3>
 					<div class="latest-grids">
 						<div class="col-md-4 latest-grid">
 							<div class="latest-top">
 								<img  src="images/l1.jpg" class="img-responsive"  alt="">
 								<div class="latest-text">
-									<h4>Men</h4>
-								</div>
-								<div class="latest-text2 hvr-sweep-to-top">
-									<h4>-50%</h4>
+									<h4>Ropa caballero</h4>
 								</div>
 							</div>
 						</div>
@@ -485,10 +237,7 @@
 							<div class="latest-top">
 								<img  src="images/l2.jpg" class="img-responsive"  alt="">
 								<div class="latest-text">
-									<h4>Shoes</h4>
-								</div>
-								<div class="latest-text2 hvr-sweep-to-top">
-									<h4>-20%</h4>
+									<h4>Calzado caballero</h4>
 								</div>
 							</div>
 						</div>
@@ -496,10 +245,7 @@
 							<div class="latest-top">
 								<img  src="images/l3.jpg" class="img-responsive"  alt="">
 								<div class="latest-text">
-									<h4>Women</h4>
-								</div>
-								<div class="latest-text2 hvr-sweep-to-top">
-									<h4>-50%</h4>
+									<h4>Joyeria caballero</h4>
 								</div>
 							</div>
 						</div>
@@ -510,10 +256,7 @@
 							<div class="latest-top">
 								<img  src="images/l4.jpg" class="img-responsive"  alt="">
 								<div class="latest-text">
-									<h4>Watch</h4>
-								</div>
-								<div class="latest-text2 hvr-sweep-to-top">
-									<h4>-45%</h4>
+									<h4>Ropa dama</h4>
 								</div>
 							</div>
 						</div>
@@ -521,10 +264,7 @@
 							<div class="latest-top">
 								<img  src="images/l5.jpg" class="img-responsive"  alt="">
 								<div class="latest-text">
-									<h4>Bag</h4>
-								</div>
-								<div class="latest-text2 hvr-sweep-to-top">
-									<h4>-10%</h4>
+									<h4>Accesorios dama</h4>
 								</div>
 							</div>
 						</div>
@@ -532,10 +272,7 @@
 							<div class="latest-top">
 								<img  src="images/l6.jpg" class="img-responsive"  alt="">
 								<div class="latest-text">
-									<h4>Cameras</h4>
-								</div>
-								<div class="latest-text2 hvr-sweep-to-top">
-									<h4>-30%</h4>
+									<h4>Calzado dama</h4>
 								</div>
 							</div>
 						</div>
@@ -545,7 +282,7 @@
 			</div>
 				<div class="new-arrivals-w3agile">
 					<div class="container">
-						<h3 class="tittle1">Best Sellers</h3>
+						<h3 class="tittle1">¡Más vendidos!</h3>
 						<div class="arrivals-grids">
 							<div class="col-md-3 arrival-grid simpleCart_shelfItem">
 								<div class="grid-arr">
@@ -561,11 +298,8 @@
 											</a>		
 										</figure>	
 									</div>
-									<div class="ribben">
-										<p>NEW</p>
-									</div>
 									<div class="ribben1">
-										<p>SALE</p>
+										<p>EN VENTA</p>
 									</div>
 									<div class="block">
 										<div class="starbox small ghosting"> </div>
@@ -574,7 +308,7 @@
 										<h6><a href="{{url('/single')}}">Sed ut perspiciatis unde</a></h6>
 										<span class="size">XL / XXL / S </span>
 										<p ><del>$100.00</del><em class="item_price">$70.00</em></p>
-										<a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
+										<a href="#" data-text="Add To Cart" class="my-cart-b item_add">Agregar al carrito</a>
 									</div>
 								</div>
 							</div>
@@ -592,8 +326,8 @@
 											</a>		
 										</figure>	
 									</div>
-									<div class="ribben2">
-										<p>OUT OF STOCK</p>
+									<div class="ribben1">
+										<p>EN VENTA</p>
 									</div>
 									<div class="block">
 										<div class="starbox small ghosting"> </div>
@@ -602,7 +336,7 @@
 										<h6><a href="{{url('/single')}}">Sed ut perspiciatis unde</a></h6>
 										<span class="size">XL / XXL / S </span>
 										<p ><del>$100.00</del><em class="item_price">$70.00</em></p>
-										<a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
+										<a href="#" data-text="Add To Cart" class="my-cart-b item_add">Agregar al carrito</a>
 									</div>
 								</div>
 							</div>
@@ -621,7 +355,7 @@
 										</figure>	
 									</div>
 									<div class="ribben1">
-										<p>SALE</p>
+										<p>EN VENTA</p>
 									</div>
 									<div class="block">
 										<div class="starbox small ghosting"> </div>
@@ -630,7 +364,7 @@
 										<h6><a href="{{url('/single')}}">Sed ut perspiciatis unde</a></h6>
 										<span class="size">XL / XXL / S </span>
 										<p ><del>$100.00</del><em class="item_price">$70.00</em></p>
-										<a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
+										<a href="#" data-text="Add To Cart" class="my-cart-b item_add">Agregar al carrito</a>
 									</div>
 								</div>
 							</div>
@@ -648,8 +382,8 @@
 											</a>		
 										</figure>	
 									</div>
-									<div class="ribben">
-										<p>NEW</p>
+									<div class="ribben1">
+										<p>EN VENTA</p>
 									</div>
 									<div class="block">
 										<div class="starbox small ghosting"> </div>
@@ -658,7 +392,7 @@
 										<h6><a href="{{url('/single')}}">Sed ut perspiciatis unde</a></h6>
 										<span class="size">XL / XXL / S </span>
 										<p ><del>$100.00</del><em class="item_price">$70.00</em></p>
-										<a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
+										<a href="#" data-text="Add To Cart" class="my-cart-b item_add">Agregar al carrito</a>
 									</div>
 								</div>
 							</div>
@@ -683,13 +417,15 @@
                     <div class="fb-comments" data-width="1125" data-href="https://www.facebook.com/starky.miranda" data-numposts="5"></div>
             </div>
 		<!--content-->
-		<!---footer--->
+		<!---footer-->
 					<div class="footer-w3l">
 						<div class="container">
 							<div class="footer-grids">
 								<div class="col-md-3 footer-grid">
-									<h4>About </h4>
-									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+									<h4>Acerca </h4>
+									<p style="text-align: justify">Ser la cadena de tiendas por departamentos en México que ofrezca la mejor calidad y variedad en 
+									servicios de venta y productos a sus clientes, fortaleciendo nuestra solidez por medio de la planeación 
+									y el trabajo en equipo.</p>
 									<div class="social-icon">
 										<a href="#"><i class="icon"></i></a>
 										<a href="#"><i class="icon1"></i></a>
@@ -698,29 +434,32 @@
 									</div>
 								</div>
 								<div class="col-md-3 footer-grid">
-									<h4>My Account</h4>
+									<h4>Mi cuenta</h4>
 									<ul>
-										<li><a href="checkout.html">Checkout</a></li>
-										<li><a href="login.html">Login</a></li>
-										<li><a href="registered.html"> Create Account </a></li>
+										<li><a href="checkout.html">Cerrar sesión</a></li>
+										<li><a href="login.html">Ingresar</a></li>
+										<li><a href="registered.html"> Crear una cuenta</a></li>
 									</ul>
 								</div>
 								<div class="col-md-3 footer-grid">
-									<h4>Information</h4>
+									<h4>Información</h4>
 									<ul>
-										<li><a href="index.html">Home</a></li>
-										<li><a href="{{url('/products')}}">Products</a></li>
-										<li><a href="codes.html">Short Codes</a></li>
-										<li><a href="mail.html">Mail Us</a></li>
-										<li><a href="products1.html">products1</a></li>
+										<li><a href="index.html">Ropa caballero</a></li>
+										<li><a href="{{url('/products')}}">Calzado caballero</a></li>
+										<li><a href="codes.html">Accesorios caballero</a></li>
+										<li><a href="mail.html">Joyeria caballero</a></li>
+										<li><a href="products1.html">Ropa caballero</a></li>
+										<li><a href="{{url('/products')}}">Calzado dama</a></li>
+										<li><a href="codes.html">Accesorios dama</a></li>
+										<li><a href="mail.html">Joyeria dama</a></li>
 									</ul>
 								</div>
 								<div class="col-md-3 footer-grid foot">
-									<h4>Contacts</h4>
+									<h4>Contáctanos</h4>
 									<ul>
-										<li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i><a href="#">E Comertown Rd, Westby, USA</a></li>
-										<li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i><a href="#">1 599-033-5036</a></li>
-										<li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a href="mailto:example@mail.com"> example@mail.com</a></li>
+										<li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i><a href="https://www.google.com.mx/maps/place/Instituto+Tecnol%C3%B3gico+de+Culiacan/@24.7886019,-107.3989274,17z/data=!3m1!4b1!4m5!3m4!1s0x86bcd0c61991131b:0x918d0686e996a928!8m2!3d24.7886019!4d-107.3967387?hl=es" style="text-align: justify">Juan de Dios S/N, Guadalupe, 80220 Culiacán Rosales, Sin.</a></li>
+										<li style="color: white"><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>7-23-45-67</li>
+										<li style="color: white"><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i>example@mail.com</li>
 										
 									</ul>
 								</div>
@@ -729,15 +468,15 @@
 							
 						</div>
 					</div>
-					<!---footer--->
+					<!---footer-->
 					<!--copy-->
 					<div class="copy-section">
 						<div class="container">
 							<div class="copy-left">
-								<p>&copy; 2016 New Shop . All rights reserved | <a href="{{url('/')}}">Tienda Online</a></p>
+								<p>&copy; 2016 WSOnline Todos los derechos reservados | <a href="{{url('/')}}">WebShopOnline</a></p>
 							</div>
 							<div class="copy-right">
-								<img src="images/card.png" alt=""/>
+								<img src="images/car.png" width="35px" height="35px" alt=""/>
 							</div>
 							<div class="clearfix"></div>
 						</div>
@@ -797,7 +536,7 @@
 										<span class="size">XL / XXL / S </span>
 										<p ><del>$100.00</del><em class="item_price"> $70.00 </em></p>
 										<div class="add">
-										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="3" data-name="Kabuli Chana" data-summary="summary 3" data-price="2.00" data-quantity="1" data-image="images/of2.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="3" data-name="Kabuli Chana" data-summary="summary 3" data-price="2.00" data-quantity="1" data-image="images/of2.png">Agregar al carrito</button>
 										</div>
 									</div>
 								</div>
@@ -861,7 +600,7 @@
 										<span class="size">XL / XXL / S </span>
 										<p ><del>$100.00</del><em class="item_price"> $70.00 </em></p>
 										<div class="add">
-										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="3" data-name="Kabuli Chana" data-summary="summary 3" data-price="2.00" data-quantity="1" data-image="images/of2.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="3" data-name="Kabuli Chana" data-summary="summary 3" data-price="2.00" data-quantity="1" data-image="images/of2.png">Agregar al carrito</button>
 										</div>
 									</div>
 								</div>
@@ -925,7 +664,7 @@
 										<span class="size">XL / XXL / S </span>
 										<p ><del>$100.00</del><em class="item_price"> $70.00 </em></p>
 										<div class="add">
-										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="3" data-name="Kabuli Chana" data-summary="summary 3" data-price="2.00" data-quantity="1" data-image="images/of2.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="3" data-name="Kabuli Chana" data-summary="summary 3" data-price="2.00" data-quantity="1" data-image="images/of2.png">Agregar al carrito</button>
 										</div>
 									</div>
 								</div>
@@ -989,7 +728,7 @@
 										<span class="size">XL / XXL / S </span>
 										<p ><del>$100.00</del><em class="item_price"> $70.00 </em></p>
 										<div class="add">
-										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="3" data-name="Kabuli Chana" data-summary="summary 3" data-price="2.00" data-quantity="1" data-image="images/of2.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="3" data-name="Kabuli Chana" data-summary="summary 3" data-price="2.00" data-quantity="1" data-image="images/of2.png">Agregar al carrito</button>
 										</div>
 									</div>
 								</div>
