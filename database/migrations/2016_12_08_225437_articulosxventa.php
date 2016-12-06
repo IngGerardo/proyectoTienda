@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUselikeTable extends Migration
+class Articulosxventa extends Migration
 {
     /**
      * Run the migrations.
@@ -13,18 +13,19 @@ class CreateUselikeTable extends Migration
      */
     public function up()
     {
-        Schema::create('uselike', function (Blueprint $table) {
+        Schema::create('Articulosxventa', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('id_user')->unsigned();
-            $table->integer('id_arti')->unsigned();
+            $table->integer('cantidad');
+            $table->integer('id_articulos')->unsigned();
+            $table->integer('id_ventas')->unsigned();
             $table->timestamps();
 
-            $table->foreign('id_arti')
+            $table->foreign('id_articulos')
             ->references('id')->on('articulos')
             ->onDelete('cascade');
 
-            $table->foreign('id_user')
-            ->references('id')->on('users')
+            $table->foreign('id_ventas')
+            ->references('id')->on('ventas')
             ->onDelete('cascade');
         });
     }
@@ -36,6 +37,6 @@ class CreateUselikeTable extends Migration
      */
     public function down()
     {
-        Schema::drop('uselike');
+        Schema::drop('Articulosxventa');
     }
 }

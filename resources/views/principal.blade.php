@@ -53,6 +53,8 @@
 			<!--content-->
 		<div class="content">
 			<!--banner-bottom-->
+
+	<div class="latest-w3">
 				<div class="ban-bottom-w3l">
 					<div class="container">
 						<div class="col-md-6 ban-bottom">
@@ -93,6 +95,7 @@
 						<div class="clearfix"></div>
 					</div>
 				</div>
+			</div>
 			<!--banner-bottom-->
 			<!--new-arrivals-->
 				<div class="new-arrivals-w3agile">
@@ -221,10 +224,16 @@
 				<div class="container">
 					<span>DISEÑOS EN TENDENCIA</span>
 					<div class="button">
-						<a href="#" class="button1"> Ingrese al sitio</a>
+						<a href="{{url('/login')}}" class="button1"> Ingrese al sitio</a>
 						<a href="#" class="button1"> Más vendidos</a>
 					</div>
 				</div>
+			</div>
+			<div class="latest-w3">
+			<br>
+			<div class='container' align="center">
+				<img  src="images/precios.png" class="img-responsive"  alt="">
+			</div>
 			</div>
 			<!--accessories-->
 			<div class="latest-w3">
@@ -408,6 +417,7 @@
 				</div>
 			<!--new-arrivals-->
 		</div>
+		<div class="latest-w3">
 		<div class="container" align="center">
                 <div class="row">
                 <div id="fb-root"></div>
@@ -422,6 +432,7 @@
 
                     <div class="fb-comments" data-href="https://www.facebook.com/starky.miranda" data-numposts="5"></div>
             </div>
+            </div>
 		<!--content-->
 		<!---footer-->
 					<div class="footer-w3l">
@@ -433,8 +444,8 @@
 									servicios de venta y productos a sus clientes, fortaleciendo nuestra solidez por medio de la planeación 
 									y el trabajo en equipo.</p>
 									<div class="social-icon" align="center">
-										<a href="#"><i class="icon"></i></a>
-										<a href="#"><i class="icon1"></i></a>
+										<a href="https://www.facebook.com/Webshoponline2/?skip_nax_wizard=true"><i class="icon"></i></a>
+										<a href="https://twitter.com/?request_context=signup"><i class="icon1"></i></a>
 									</div>
 								</div>
 								<div class="col-md-3 footer-grid">
@@ -447,14 +458,14 @@
 								<div class="col-md-3 footer-grid">
 									<h4>Información</h4>
 									<ul>
-										<li><a href="index.html">Ropa caballero</a></li>
-										<li><a href="{{url('/products')}}">Calzado caballero</a></li>
-										<li><a href="codes.html">Accesorios caballero</a></li>
-										<li><a href="mail.html">Joyería caballero</a></li>
-										<li><a href="products1.html">Ropa dama</a></li>
-										<li><a href="{{url('/products')}}">Calzado dama</a></li>
-										<li><a href="codes.html">Accesorios dama</a></li>
-										<li><a href="mail.html">Joyería dama</a></li>
+										<li><a href="{{url('/categoriash/1')}}">Ropa caballero</a></li>
+										<li><a href="{{url('/categoriash/2')}}">Calzado caballero</a></li>
+										<li><a href="{{url('/categoriash/3')}}">Accesorios caballero</a></li>
+										<li><a href="{{url('/categoriash/4')}}">Joyería caballero</a></li>
+										<li><a href="{{url('/categorias/1')}}">Ropa dama</a></li>
+										<li><a href="{{url('/categorias/2')}}">Calzado dama</a></li>
+										<li><a href="{{url('/categorias/3')}}">Accesorios dama</a></li>
+										<li><a href="{{url('/categorias/4')}}">Joyería dama</a></li>
 									</ul>
 								</div>
 								<div class="col-md-3 footer-grid foot">
