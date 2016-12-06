@@ -43,7 +43,7 @@
         <div class="container">
             <br>
             <div align="right">
-            <a href={{url('registroCategorias')}}><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Agregar Categoria</button></a></div>
+            <a href="{{url('registroCategorias')}}"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Agregar Categoria</button></a></div>
             <h1>Categorias Registradas</h1>   
             <div class="table-responsive">
                 <table class="table table-hover">
