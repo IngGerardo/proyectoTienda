@@ -53,6 +53,8 @@
 			<!--content-->
 		<div class="content">
 			<!--banner-bottom-->
+
+	<div class="latest-w3">
 				<div class="ban-bottom-w3l">
 					<div class="container">
 						<div class="col-md-6 ban-bottom">
@@ -93,6 +95,7 @@
 						<div class="clearfix"></div>
 					</div>
 				</div>
+			</div>
 			<!--banner-bottom-->
 			<!--new-arrivals-->
 				<div class="new-arrivals-w3agile">
@@ -221,10 +224,16 @@
 				<div class="container">
 					<span>DISEÑOS EN TENDENCIA</span>
 					<div class="button">
-						<a href="#" class="button1"> Ingrese al sitio</a>
+						<a href="{{url('/login')}}" class="button1"> Ingrese al sitio</a>
 						<a href="#" class="button1"> Más vendidos</a>
 					</div>
 				</div>
+			</div>
+			<div class="latest-w3">
+			<br>
+			<div class='container' align="center">
+				<img  src="images/precios.png" class="img-responsive"  alt="">
+			</div>
 			</div>
 			<!--accessories-->
 			<div class="latest-w3">
@@ -408,6 +417,7 @@
 				</div>
 			<!--new-arrivals-->
 		</div>
+		<div class="latest-w3">
 		<div class="container" align="center">
                 <div class="row">
                 <div id="fb-root"></div>
@@ -421,6 +431,7 @@
                     </div>
 
                     <div class="fb-comments" data-href="https://www.facebook.com/starky.miranda" data-numposts="5"></div>
+            </div>
             </div>
 		<!--content-->
 		<!---footer-->
