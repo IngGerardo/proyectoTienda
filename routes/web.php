@@ -76,5 +76,6 @@ Route::post('/guardarArticulos','articulosController@guardarArticulos');
 Route::get('/eliminarArticulo/{id}', 'articulosController@eliminarA');
 
 Route::get('/inventario','inventarioController@mostrarInv');
-Route::get('/eliminarProInv/{id}','inventarioController@eliminarProInv');
-Route::get('/agregarProInv','inventarioController@agregarProInv');
+Route::post('/eliminarProInv/{id}','inventarioController@eliminarProInv');
+Route::post('/agregarProInv/{id}','inventarioController@agregarProInv');
+Route::post('/eliminarProducto/{id}','inventarioController@eliminarProducto');

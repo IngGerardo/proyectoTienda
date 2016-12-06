@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUselikeTable extends Migration
+class Comentarios extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateUselikeTable extends Migration
      */
     public function up()
     {
-        Schema::create('uselike', function (Blueprint $table) {
+        Schema::create('comentarios', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('id_user')->unsigned();
+            $table->string('comentario');
             $table->integer('id_arti')->unsigned();
+            $table->integer('id_user')->unsigned();
             $table->timestamps();
 
             $table->foreign('id_arti')
@@ -36,6 +37,6 @@ class CreateUselikeTable extends Migration
      */
     public function down()
     {
-        Schema::drop('uselike');
+        Schema::drop('comentarios');
     }
 }
