@@ -8,7 +8,8 @@ use DB;
 use App\categorias;
 use App\cat_articulo;
 use App\articulos;
-
+use App\comentarios;
+use App\User;
 
 
 class articulosController extends Controller
@@ -39,42 +40,55 @@ public function guardarArticulos(Request $request){
 public function articuloxcategoria($id)
 	{	
 		$categorias = categorias::all();
-		$articulo = DB::table('categorias')
-		->join('cat_articulo','cat_articulo.id_categoria','=', 'categorias.id')
-		->join('articulos','cat_articulo.id_articulo','=','articulos.id')
+        $articulo = DB::table('categorias')
+        ->join('cat_articulo','cat_articulo.id_categoria','=', 'categorias.id')
+        ->join('articulos','cat_articulo.id_articulo','=','articulos.id')                
         ->select('categorias.nombre as categoriaNombre','categorias.id as categoriaId','articulos.descripcion','articulos.id','articulos.precio', 'articulos.tipo','articulos.likee','articulos.dislike')
         ->where('categorias.id', '=', $id)
         ->where('articulos.tipo', '=', '1')
-        
-        
+        ->get();
+
+
+        $comentarios= DB::table('comentarios')
+        ->join('users','comentarios.id_user','=','users.id')
+        ->join('articulos','comentarios.id_arti','=','articulos.id')
+        ->join('cat_articulo','cat_articulo.id_articulo','=', 'articulos.id')
+        ->select('comentarios.comentario as coment','users.nombre as usuario','articulos.id as ide')
+        ->where('cat_articulo.id_categoria', '=', $id)
         ->get();
 
         $cate=DB::table('categorias')->where('id','=',$id)->select('nombre')->first();
 
         $cates=categorias::all();
 
-		return view('categoriasarticulos',compact('articulo','cates','cate', 'categorias'));
+        return view('categoriasarticulos',compact('articulo','cates','cate', 'categorias','comentarios'));
 	}
 
 
 public function articuloxcategoriah($id)
 	{	
 		$categorias = categorias::all();
-		$articulo = DB::table('categorias')
-		->join('cat_articulo','cat_articulo.id_categoria','=', 'categorias.id')
-		->join('articulos','cat_articulo.id_articulo','=','articulos.id')
+        $articulo = DB::table('categorias')
+        ->join('cat_articulo','cat_articulo.id_categoria','=', 'categorias.id')
+        ->join('articulos','cat_articulo.id_articulo','=','articulos.id')                
         ->select('categorias.nombre as categoriaNombre','categorias.id as categoriaId','articulos.descripcion','articulos.id','articulos.precio', 'articulos.tipo','articulos.likee','articulos.dislike')
         ->where('categorias.id', '=', $id)
         ->where('articulos.tipo', '=', '2')
-        
-        
+        ->get();
+
+        $comentarios= DB::table('comentarios')
+        ->join('users','comentarios.id_user','=','users.id')
+        ->join('articulos','comentarios.id_arti','=','articulos.id')
+        ->join('cat_articulo','cat_articulo.id_articulo','=', 'articulos.id')
+        ->select('comentarios.comentario as coment','users.nombre as usuario','articulos.id as ide')
+        ->where('cat_articulo.id_categoria', '=', $id)
         ->get();
 
         $cate=DB::table('categorias')->where('id','=',$id)->select('nombre')->first();
 
         $cates=categorias::all();
 
-		return view('categoriasarticulos',compact('articulo','cates','cate', 'categorias'));
+        return view('categoriasarticulos',compact('articulo','cates','cate', 'categorias','comentarios'));
 	}
 
 
@@ -99,6 +113,20 @@ $articulo = articulos::find($id);
  public function eliminarA($id){
         articulos::find($id)->delete();
         return Redirect('/editarArticulos');
+    }
+
+public function comenta(Request $datos)
+    {
+        $nuevo = new comentarios();
+        $nuevo->id_user=auth()->user()->id;
+        $nuevo->id_arti=$datos->input('id');
+                $nuevo->comentario=$datos->input('comentario');
+                $nuevo->save();
+                
+        if($datos->input('tipo')==1)
+        return Redirect('/categorias/'.$datos->input('categoriaId'));
+        else
+        return Redirect('/categoriash/'.$datos->input('categoriaId'));
     }
 
 }

@@ -54,6 +54,8 @@ Route::group(['middleware' => ['auth']], function () {
 
 	Route::get('/dislike/{id}/{categoriaId}','categoriaController@dislike');
 
+	Route::post('/guardarcomentario','articulosController@comenta');
+
 
 });
 
