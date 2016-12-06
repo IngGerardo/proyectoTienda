@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-    <meta charset="UTF-8">
+<head>
+  <meta charset="UTF-8">
     <title>Inventario</title>
 
     <!--<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
       <link rel="stylesheet" href="{{asset("css/bootstrap.min.css")}}">
       <link rel="stylesheet" href="{{ asset("css/bootstrap.css") }}">
+      <link rel="stylesheet" href="{{ asset("css/ionicons.min.css") }}">
       <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>-->
       <!--<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
       <script src="{{ asset("js/jquery.min.js") }}"></script>
@@ -21,8 +22,8 @@
         background-color: #8eef8b;
     }
 
-        table{
-      width: 100%
+      table{
+      width: 100%;
     }
     table, th, td { 
         padding: 1px;
@@ -45,10 +46,10 @@
 
 </head>
     <body>
-        <div class="container">
+      <div class="container">
             <br>
             <div align="right">
-            <h1>Mostrar inventario</h1>   
+              <h1>Mostrar inventario</h1>   
             <div class="table-responsive">
                 <table class="table table-hover">
                     <thead>
@@ -66,8 +67,17 @@
                                     <td>{{$inv->descripcion}}</td>
                                     <td>{{$inv->cantidad}}</td>
                                     <td>
-                                        <a href="#"><button type="button" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-plus"></span> Agregar productos</button></a></div>
-                                        <a href="" data-target="#dataeliminar" data-toggle="modal" data-id="{{ $inv->id }}" title="{{ $inv->descripcion }}">Modal</a>
+                                        <a href="" data-target="#dataagregar" data-toggle="modal" data-id="{{ $inv->id }}">
+                                          <button type="button" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-plus"></span> Agregar</button>
+                                        </a>
+                                        <a href="" data-target="#databorrar" data-toggle="modal" data-id="{{ $inv->id }}">
+                                          <button type="button" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-erase"></span> Borrar</button>
+                                        </a>
+                                        <form action="{{ url('/eliminarProducto') }}" method="POST" style="display:inline;">
+                                          <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                          <input type="hidden" id="id" name="id">
+                                          <button type="submit" class="btn btn-primary btn-xs"><span class="fa fa-times" aria-hidden="true">Eliminar</button>
+                                        </form>
                                     </td>
                                 </tr>
                             @endforeach
@@ -76,26 +86,75 @@
             </div>
         </div>
         <!--Modal-->
-          <div id="dataeliminar" class="modal fade" role="dialog">
+          <div id="databorrar" class="modal fade" role="dialog">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header modal-header-success">
               <button type="button" class="close" data-dismiss="modal">&times;</button>
               <font color="white">
-               <h4 class="modal-title" align="center"><span class="glyphicon glyphicon-copy"><font color="black">Encabezado</font></span></h4>
+               <h4 class="modal-title" align="center"><span class="glyphicon glyphicon-erase"></span><font color="white">&nbsp;Borrar</font></h4>
               </font>
             </div>
             <div class="modal-body">
-                Contenido
+                <b>Introduzca la cantidad de "{{ $inv->descripcion }}" a borrar:</b><br><br>
+                <div align="center">
+                <form action="{{url('/eliminarProInv')}}/{{$inv->id}}" method='POST'>
+                  <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                  <input type="hidden" name="id" value="{{$inv->id}}">
+                  <input name="eliminar" type="text" class="form-control" placeholder="Cantidad" required pattern="[0-9]*">
+                  <br>
+                  <input type="submit" class="btn btn-primary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <a href="{{url('/inventario')}}" class="btn btn-danger" align="center">Cancelar</a>
+                </form >
+             </div>
                     <!--contenido-->
             </div>
           </div>
         </div>
       </div>
+      <!--Modal-->
+          <div id="dataagregar" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header modal-header-success">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <font color="white">
+               <h4 class="modal-title" align="center"><span class="glyphicon glyphicon-plus"></span><font color="white">&nbsp;Agregar</font></h4>
+              </font>
+            </div>
+              <div class="modal-body">
+                <b>Introduzca la cantidad de "{{ $inv->descripcion }}" a agregar:</b><br><br>
+                <div align="center">
+                <form action="{{url('/agregarProInv')}}/{{$inv->id}}" method='POST'>
+                  <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                  <input type="hidden" name="id" value="{{$inv->id}}">
+                  <input name="agregar" type="text" class="form-control" placeholder="Cantidad" required pattern="[0-9]*">
+                  <br>
+                  <input type="submit" class="btn btn-primary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <a href="{{url('/inventario')}}" class="btn btn-danger" align="center">Cancelar</a>
+                </form >
+             </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
 <script type="text/javascript">
       $(document).ready(function(){
       $('[data-toggle="modal"]').tooltip();
-      $('#dataEliminar').on('show.bs.modal', function (event) {
+      $('#data').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget); // Botón que activó el modal
+            var id = button.data('id');
+            var descripcion = button.data('descripcion');
+
+            var modal = $(this)
+            modal.find('.modal-body #id').val(id)
+
+            $('#imagen').html("<img src='../img/"+ id+".png' width='100%' class='img-responsive imagen carta'>");
+            $('#descripcion').html(descripcion);
+
+            });
+      $('#dataagregar').on('show.bs.modal', function (event) {
             var button = $(event.relatedTarget); // Botón que activó el modal
             var id = button.data('id');
             var descripcion = button.data('descripcion');
