@@ -17,6 +17,7 @@ class CreateArticulosTable extends Migration
             $table->increments('id');
             $table->string('codigo');
             $table->double('precio');
+            $table->integer('cantidad');
             $table->string('descripcion');
             $table->integer('tipo');
             $table->integer('likee');
