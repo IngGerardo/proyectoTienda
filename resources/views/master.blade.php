@@ -153,6 +153,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<li><a href="{{url('/registraArticulos')}}">Registrar Articulos</a></li>
 									<li><a href="{{url('/editarArticulos')}}">Editar Articulos</a></li>
 									<li><a href="{{url('/importarCSV')}}">Importar CSV</a></li>
+									<li><a href="{{url('/inventario')}}">Inventario</a></li>
 								</ul>
 							</div>
 							

@@ -75,7 +75,7 @@
 									<div class="ban-top">
 										<img src="images/p3.jpg" class="img-responsive" alt=""/>
 										<div class="ban-text1">
-											<h4>Joyeria</h4>
+											<h4>Joyería</h4>
 										</div>
 									</div>
 								</div>
@@ -251,7 +251,7 @@
 							<div class="latest-top">
 								<img  src="images/l3.jpg" class="img-responsive"  alt="">
 								<div class="latest-text">
-									<h4>Joyeria caballero</h4>
+									<h4>Joyería caballero</h4>
 								</div>
 							</div>
 						</div>
@@ -432,19 +432,16 @@
 									<p style="text-align: justify">Ser la cadena de tiendas por departamentos en México que ofrezca la mejor calidad y variedad en 
 									servicios de venta y productos a sus clientes, fortaleciendo nuestra solidez por medio de la planeación 
 									y el trabajo en equipo.</p>
-									<div class="social-icon">
+									<div class="social-icon" align="center">
 										<a href="#"><i class="icon"></i></a>
 										<a href="#"><i class="icon1"></i></a>
-										<a href="#"><i class="icon2"></i></a>
-										<a href="#"><i class="icon3"></i></a>
 									</div>
 								</div>
 								<div class="col-md-3 footer-grid">
 									<h4>Mi cuenta</h4>
 									<ul>
-										<li><a href="checkout.html">Cerrar sesión</a></li>
-										<li><a href="login.html">Ingresar</a></li>
-										<li><a href="registered.html"> Crear una cuenta</a></li>
+										<li><a href="{{url('/login')}}">Ingresar</a></li>
+										<li><a href="{{url('/register')}}"> Crear una cuenta</a></li>
 									</ul>
 								</div>
 								<div class="col-md-3 footer-grid">
@@ -453,11 +450,11 @@
 										<li><a href="index.html">Ropa caballero</a></li>
 										<li><a href="{{url('/products')}}">Calzado caballero</a></li>
 										<li><a href="codes.html">Accesorios caballero</a></li>
-										<li><a href="mail.html">Joyeria caballero</a></li>
-										<li><a href="products1.html">Ropa caballero</a></li>
+										<li><a href="mail.html">Joyería caballero</a></li>
+										<li><a href="products1.html">Ropa dama</a></li>
 										<li><a href="{{url('/products')}}">Calzado dama</a></li>
 										<li><a href="codes.html">Accesorios dama</a></li>
-										<li><a href="mail.html">Joyeria dama</a></li>
+										<li><a href="mail.html">Joyería dama</a></li>
 									</ul>
 								</div>
 								<div class="col-md-3 footer-grid foot">
@@ -479,7 +476,7 @@
 					<div class="copy-section">
 						<div class="container">
 							<div class="copy-left">
-								<p>&copy; 2016 WSOnline Todos los derechos reservados | <a href="{{url('/')}}">WebShopOnline</a></p>
+								<p>WSOnline 2016 &copy; Todos los derechos reservados | <a href="{{url('/')}}">WebShopOnline</a></p>
 							</div>
 							<div class="copy-right">
 								<img src="images/car.png" width="35px" height="35px" alt=""/>

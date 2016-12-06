@@ -779,7 +779,7 @@ a.my-cart-b {
   left: 0;
   right: 0;
   bottom: 0;
-  background: #1565C0;
+  background: #1b8b59;
   -webkit-transform: scaleY(0);
   transform: scaleY(0);
   -webkit-transform-origin: 50% 0;
@@ -790,7 +790,6 @@ a.my-cart-b {
   transition-duration: 0.3s;
   -webkit-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
-	border: 2px solid #1565C0;
 }
 .my-cart-b:hover, .my-cart-b:focus, .my-cart-b:active {
 	color: white;
