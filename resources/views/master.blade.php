@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>New Shop a E-Commerce Online Shopping Category Flat Bootstrap Responsive Website Template</title>
+<title>WebShopOnline a E-Commerce Online Shopping Category Flat Bootstrap Responsive Website Template</title>
 <!--css-->
 <link rel="stylesheet" href="{{ asset("css/bootstrap.css") }}">
 <link  rel="stylesheet" href="{{ asset("css/style.css") }}">
