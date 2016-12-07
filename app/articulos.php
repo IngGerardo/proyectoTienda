@@ -9,6 +9,6 @@ class articulos extends Model
    protected $table = 'articulos';   //
 
    protected $fillable = [
-        'id', 'codigo', 'precio','descripcion', 'tipo',
+        'id', 'codigo', 'precio','cantidad','descripcion', 'tipo','likee','dislike','activo'
     ];
 }

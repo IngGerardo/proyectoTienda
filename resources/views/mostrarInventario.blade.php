@@ -1,22 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-    <title>Inventario</title>
+@extends('master')
 
-    <!--<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
-      <link rel="stylesheet" href="{{asset("css/bootstrap.min.css")}}">
-      <link rel="stylesheet" href="{{ asset("css/bootstrap.css") }}">
-      <link rel="stylesheet" href="{{ asset("css/ionicons.min.css") }}">
-      <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>-->
-      <!--<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
-      <script src="{{ asset("js/jquery.min.js") }}"></script>
-      <script type="text/javascript" src="{{ asset("js/bootstrap-3.1.1.min.js") }}"></script>
-     
-     <script src="{{ asset("js/main.js") }}"></script>
-<!--search jQuery-->
-<script src="{{ asset("js/responsiveslides.min.js") }}"></script>
-<style>
+@section('encabezado')
+  <style>
     .encabezado{
         color: black;
         background-color: #8eef8b;
@@ -44,19 +29,20 @@
 
 </style>
 
-</head>
-    <body>
-      <div class="container">
+@stop
+
+@section('contenido')
+ <div class="container">
             <br>
               <h1>Mostrar inventario</h1>   
             <div class="table-responsive">
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th>#</th>
-                            <th>Articulo</th>
-                            <th>Cantidad</th>
-                            <th>Opciones</th>
+                            <th><font color="white">#</font></th>
+                            <th><font color="white">Articulo</font></th>
+                            <th><font color="white">Cantidad</font></th>
+                            <th><font color="white">Opciones</font></th>
                         </tr>
                     </thead>
                         <tbody>
@@ -72,7 +58,7 @@
                                         <a href="" data-target="#{{$inv->id}}" data-toggle="modal" data-id="{{ $inv->id }}">
                                           <button type="button" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-erase"></span> Borrar</button>
                                         </a>
-                                        <form action="{{ url('/eliminarProducto/') }}{{$inv->id}}" method="POST" style="display:inline;">
+                                        <form action="{{ url('/eliminarProducto') }}/{{$inv->id}}" method="POST" style="display:inline;">
                                           <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                           <input type="hidden" id="id" name="id">
                                           <button type="submit" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-remove"></span>Quitar</button>
@@ -137,32 +123,7 @@
                 </table>
             </div>
         </div>
-      <!--Modal-->
-          <div id="dataagregar" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header modal-header-success">
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
-              <font color="white">
-               <h4 class="modal-title" align="center"><span class="glyphicon glyphicon-plus"></span><font color="white">&nbsp;Agregar</font></h4>
-              </font>
-            </div>
-              <div class="modal-body">
-                <b>Introduzca la cantidad de "{{ $inv->descripcion }}" a agregar:</b><br><br>
-                <div align="center">
-                <form action="{{url('/agregarProInv')}}/{{$inv->id}}" method='POST'>
-                  <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                  <input type="hidden" name="id" value="{{$inv->id}}">
-                  <input name="agregar" type="text" class="form-control" placeholder="Cantidad" required pattern="[0-9]*">
-                  <br>
-                  <input type="submit" class="btn btn-primary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  <a href="{{url('/inventario')}}" class="btn btn-danger" align="center">Cancelar</a>
-                </form >
-             </div>
-            </div>
-          </div>
-        </div>
-      </div>
+
 
       
 <script type="text/javascript">
@@ -194,5 +155,4 @@
             });
 			});
 		</script>
-    </body>
-</html>
+@stop

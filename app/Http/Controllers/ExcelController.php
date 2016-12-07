@@ -20,7 +20,7 @@ class ExcelController extends Controller
 				articulos::firstOrCreate($sheet->toArray());
 			});
 	});
-	return back();  
+	return redirect('/importarCSV')->with('csv', '¡Su csv se ha procesado con éxito!');
 }
 
 public function registraArticulos()

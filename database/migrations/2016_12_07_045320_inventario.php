@@ -32,6 +32,6 @@ class Inventario extends Migration
      */
     public function down()
     {
-        Schema::drop('inventario');
+        Schema::drop('inventarios');
     }
 }

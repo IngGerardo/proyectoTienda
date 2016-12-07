@@ -72,17 +72,35 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			                @if (Auth::guest())
 	                            <li><a href="{{ url('/login') }}">Login</a></li>
 	                            <li><a href="{{ url('/register') }}">Registrar</a></li>
-	                        @else
-	                        <li><a href="{{ url('/comentarioss') }}">Comentarios</a></li>
-	                        <li><a href="{{url('/registraArticulos')}}">Registrar Articulos</a></li>
-							<li><a href="{{url('/editarArticulos')}}">Editar Articulos</a></li>
-							<li><a href="{{url('/importarCSV')}}">Importar CSV</a></li>
-							<li><a href="{{url('/inventario')}}">Inventario</a></li>
-	                        <li><a href="{{url('/consultaCategorias')}}">Categorias</a></li>
-		                	<li><a href="{{url('/checkout')}}">Carrito</a></li>
-
+	                        @elseif(Auth::check() && auth()->user()->admin == 0)
+			                	<li><a href="{{url('/carrito')}}">Carrito</a></li>
 	                            <li class="dropdown">
 	                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+	                                    {{ Auth::user()->nombre }} <span class="caret"></span>
+	                                </a>
+
+	                                <ul class="dropdown-menu" role="menu">
+	                                    <li>
+	                                        <a href="{{ url('/logout') }}"
+	                                            onclick="event.preventDefault();
+	                                                     document.getElementById('logout-form').submit();">
+	                                            <font color="black">Logout</font>
+	                                        </a>
+
+	                                        <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+	                                            {{ csrf_field() }}
+	                                        </form>
+	                                    </li>
+	                                </ul>
+	                            </li>
+	                        @elseif(Auth::check() && auth()->user()->admin == 1)
+	                        	<li><a href="{{url('/registraArticulos')}}">Registrar Articulos</a></li>
+								<li><a href="{{url('/editarArticulos')}}">Editar Articulos</a></li>
+								<li><a href="{{url('/importarCSV')}}">Importar CSV</a></li>
+								<li><a href="{{url('/inventario')}}">Inventario</a></li>
+		                        <li><a href="{{url('/consultaCategorias')}}">Categorias</a></li>
+		                        <li class="dropdown">
+	                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
 	                                    {{ Auth::user()->nombre }} <span class="caret"></span>
 	                                </a>
 

@@ -22,6 +22,7 @@
 				<th>Precio</th>
 				<th>Descripcion</th>
 				<th>Tipo</th>
+				<th>Opciones</th>
 			</tr>
 		</thead>
 		<tbody>

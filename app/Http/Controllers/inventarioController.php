@@ -7,20 +7,23 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests;
 use App\articulos;
 use App\inventarios;
+use App\categorias;
 use DB;
 
 class inventarioController extends Controller
 {
      public function mostrarInv()
 	{
+		$categorias = categorias::all();
 		$articulo = DB::table('inventarios')
 		->join('articulos','articulos.id','=', 'inventarios.id_articulo')
 		->select('articulos.descripcion','articulos.id','articulos.cantidad')
         ->get();
-		return view('mostrarInventario',compact('articulo'));
+		return view('mostrarInventario',compact('articulo','categorias'));
 	}
 	 public function agregarProInv($id, Request $request)
 	{
+		$categorias = categorias::all();
 		$agregarPro = DB::table('inventarios')
 		->join('articulos','articulos.id','=', 'inventarios.id_articulo')
 		->select('articulos.cantidad')
@@ -34,7 +37,7 @@ class inventarioController extends Controller
 
         return Redirect('/inventario');
 
-		return view('mostrarInventario',compact('articulo'));
+		return view('mostrarInventario',compact('articulo','categorias'));
 	}
 	public function eliminarProInv($id, Request $request){
         $eliminarPro = DB::table('inventarios')

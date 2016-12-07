@@ -33,17 +33,17 @@
 
 @section('contenido')
         <div class="container">
-            <br>
             <div align="right">
             <a href="{{url('registroCategorias')}}"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Agregar Categoria</button></a></div>
             <h1>Categorias Registradas</h1>   
+            <br>
             <div class="table-responsive">
                 <table class="table table-hover">
                     <thead>
                         <tr>
                             <th><font color="white">#</font></th>
                             <th><font color="white">Nombre</font></th>
-                            <th><font color="white">Opcion</font></th>
+                            <th><font color="white">Opciones</font></th>
                         </tr>
                     </thead>
                         <tbody>

@@ -13,6 +13,8 @@
 
 Route::get('/','articulosController@categorias');
 
+Route::get('/lkadmvkladnkvldana/{token}', 'HomeController@confirmRegister');
+
 /*Route::get('/welcome', function () {
     return view('welcome');
 });*/

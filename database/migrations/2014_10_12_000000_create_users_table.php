@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('apellido_materno');
             $table->string('telefono');
             $table->boolean('admin')->default(0);
+            $table->boolean('activo')->default(0);
             $table->string('email')->unique();
             $table->string('password');
             $table->rememberToken();
