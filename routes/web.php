@@ -34,9 +34,11 @@ Route::group(['middleware' => ['auth']], function () {
 
 	Route::get('/home', 'HomeController@index');
 
-	Route::get('/registroCategorias', function () {
+	/*Route::get('/registroCategorias', function () {
 	    return view('registroCategorias');
-	});
+	});*/
+	
+	Route::get('/registroCategorias','categoriaController@regcat');
 
 	Route::post('/guardarCategoria','categoriaController@guardar');
 
@@ -58,6 +60,10 @@ Route::group(['middleware' => ['auth']], function () {
 
 	Route::post('/guardarcomentario','articulosController@comenta');
 
+	Route::get('/comentarioss','articulosController@comentar');
+
+	Route::get('/eliminarComentario/{id}', 'articulosController@eliminarC');
+
 
 });
 
@@ -76,8 +82,6 @@ Route::get('/actualizarArticulo/{id}','articulosController@actualizarArticulo');
 Route::get('/categoriash/{id}','articulosController@articuloxcategoriah');
 Route::post('/guardarArticulos','articulosController@guardarArticulos');
 Route::get('/eliminarArticulo/{id}', 'articulosController@eliminarA');
-Route::get('/comentarioss','articulosController@comentar');
-Route::get('/eliminarComentario/{id}', 'articulosController@eliminarC');
 
 Route::get('/inventario','inventarioController@mostrarInv');
 Route::post('/eliminarProInv/{id}','inventarioController@eliminarProInv');

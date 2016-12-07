@@ -1,24 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-    <meta charset="UTF-8">
-    <title>Registro</title>
-    <!--<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
-      <link rel="stylesheet" href="{{asset("css/bootstrap.min.css")}}">
-      <script src="{{asset("js/jquery.min.js")}}"></script>
-      <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>-->
-      <!--<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
-      <script src="{{asset("js/bootstrap.min.js")}}"></script>
-     
-</head>
-    <body>
+@extends ('master') @section ('encabezado') @stop @section ('contenido')
+<br>
         <div class="container">
-            <h1>Registro de Categorias</h1>   
             <div class="row">
             <div class="col-xs-12">
                 <div class="panel panel-primary">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Categoria</h3>
+                        <h3 class="panel-title" align='center'>Registro de Categorias</h3>
                     </div>
                         <div class="panel-body">
                             <form action="{{url('/guardarCategoria')}}" method="POST">
@@ -36,5 +24,4 @@
                 </div>
             </div>
         </div>
-    </body>
-</html>
+@stop
