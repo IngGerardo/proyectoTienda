@@ -25,12 +25,21 @@
 							<input name="precio" type="number" class="form-control" placeholder="precio" required>
 						</div>
 						<div class="form-group">
+							<label for="cantidad">Cantidad:</label>
+							<input name="cantidad" type="number" class="form-control" placeholder="cantidad" required>
+						</div>
+						<div class="form-group">
 							<label for="descripcion">Descripcion:</label>
 							<input name="descripcion" type="text" class="form-control" placeholder="descripcion" required>
 						</div>
 						<div class="form-group">
-							<label for="tipo">Tipo:</label>
-							<input name="tipo" type="number" class="form-control" placeholder="Tipo">
+							<label for="tipo">Selecciona una genero</label>
+                                               <select class="form-control" id="tipo" name="tipo">
+                                               
+												  <option value="1">Mujeres</option>
+												  <option value="2">Hombres</option>
+												 
+												</select>
 						</div>
 						<input type="submit" value="Registrar" class="btn btn-primary" align="center">
 						<a href="{{url('/')}}" class="btn btn-danger" align="center">Cancelar</a>
