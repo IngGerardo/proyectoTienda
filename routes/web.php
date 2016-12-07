@@ -88,6 +88,6 @@ Route::post('/eliminarProInv/{id}','inventarioController@eliminarProInv');
 Route::post('/agregarProInv/{id}','inventarioController@agregarProInv');
 Route::post('/eliminarProducto/{id}','inventarioController@eliminarProducto');
 Route::get('/', 'articulosController@consulmas');
-
+Route::get('/', 'articulosController@consulmasP');
 Route::post('/mostrarCompra/{id}','ventasController@mostrarCarrito');
 

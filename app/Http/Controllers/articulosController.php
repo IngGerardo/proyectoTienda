@@ -154,14 +154,40 @@ public function eliminarC($id)
 
 public function consulmas()
     {
+        $articulo2 = DB::table('articulos')
+        ->select('articulos.descripcion','articulos.precio','articulos.id','articulos.likee','articulos.dislike')
+        ->orderby('likee','DESC')
+        ->take(4)
+        ->get();
+
         $categorias = categorias::all();
+
         $articulo = DB::table('articulos')
         ->select('articulos.descripcion','articulos.precio','articulos.id','articulos.likee','articulos.dislike')
         ->orderby('created_at','DESC')
         ->take(4)
         ->get();
 
-        return view('principal', compact('articulo','categorias'));
+        return view('principal', compact('articulo','articulo2','categorias'));
+    }
+
+public function consulmasP()
+    {
+         $articulo = DB::table('articulos')
+        ->select('articulos.descripcion','articulos.precio','articulos.id','articulos.likee','articulos.dislike')
+        ->orderby('created_at','DESC')
+        ->take(4)
+        ->get();
+
+        $categorias = categorias::all();
+
+        $articulo2 = DB::table('articulos')
+        ->select('articulos.descripcion','articulos.precio','articulos.id','articulos.likee','articulos.dislike')
+        ->orderby('likee','DESC')
+        ->take(4)
+        ->get();
+        
+        return view('principal', compact('articulo','articulo2','categorias'));
     }
 }
 
