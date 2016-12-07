@@ -22,7 +22,7 @@ class adminMiddleware
             }
             else
             {
-                return redirect('/admin');
+                return redirect('/');
             }
     }
 }

@@ -22,6 +22,7 @@ class CreateArticulosTable extends Migration
             $table->integer('tipo');
             $table->integer('likee');
             $table->integer('dislike');
+            $table->integer('activo')->default(1); 
             $table->timestamps();
         });
     }
