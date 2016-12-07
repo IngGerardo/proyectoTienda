@@ -65,7 +65,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="header-top">
 				<div class="container">
 					 <div class="top-left">
-						<a href="#"> Asistencia telefónica  <i class="glyphicon glyphicon-phone" aria-hidden="true"></i> 7-23-45-67</a>
+						<font color="white"> Asistencia telefónica  <i class="glyphicon glyphicon-phone" aria-hidden="true"></i> 7-23-45-67</font>
 					</div>
 					<div class="top-right">
 					<ul>
@@ -73,6 +73,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	                            <li><a href="{{ url('/login') }}">Login</a></li>
 	                            <li><a href="{{ url('/register') }}">Registrar</a></li>
 	                        @else
+	                        <li><a href="{{url('/registraArticulos')}}">Registrar Articulos</a></li>
+							<li><a href="{{url('/editarArticulos')}}">Editar Articulos</a></li>
+							<li><a href="{{url('/importarCSV')}}">Importar CSV</a></li>
+							<li><a href="{{url('/inventario')}}">Inventario</a></li>
 	                        <li><a href="{{url('/consultaCategorias')}}">Categorias</a></li>
 		                	<li><a href="{{url('/checkout')}}">Carrito</a></li>
 
@@ -168,11 +172,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 												<div class="clearfix"></div>
 											</div>
 										</ul>
-									</li>
-									<li><a href="{{url('/registraArticulos')}}">Registrar Articulos</a></li>
-									<li><a href="{{url('/editarArticulos')}}">Editar Articulos</a></li>
-									<li><a href="{{url('/importarCSV')}}">Importar CSV</a></li>
-									<li><a href="{{url('/inventario')}}">Inventario</a></li>
+									</li>			
 								</ul>
 							</div>
 							

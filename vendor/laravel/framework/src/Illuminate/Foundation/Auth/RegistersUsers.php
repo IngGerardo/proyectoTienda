@@ -2,6 +2,8 @@
 
 namespace Illuminate\Foundation\Auth;
 
+use Illuminate\Support\Facades\Mail;
+use App\Mail\confirmacionEmail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Auth\Events\Registered;
@@ -34,7 +36,12 @@ trait RegistersUsers
 
         event(new Registered($user = $this->create($request->all())));
 
-        $this->guard()->login($user);
+        //enviar email de confirmacion
+        $token=md5($user->id);
+        $pass="";
+        Mail::to($user->email,$user->nombre)
+        ->send(new confirmacionEmail($user,$token,$pass));
+        //$this->guard()->login($user);
 
         return $this->registered($request, $user)
             ?: redirect($this->redirectPath());

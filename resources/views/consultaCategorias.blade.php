@@ -1,16 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-    <meta charset="UTF-8">
-    <title>New Shop a E-Commerce Online Shopping Category Flat Bootstrap Responsive Website Template</title>
+@extends ('master')
 
-    <!--<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
-      <link rel="stylesheet" href="{{asset("css/bootstrap.min.css")}}">
-      <script src="{{asset("js/jquery.min.js")}}"></script>
-      <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>-->
-      <!--<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
-      <script src="{{asset("js/bootstrap.min.js")}}"></script>
-<style>
+@section ('encabezado')
+    <br />
+    <style>
     .encabezado{
         color: black;
         background-color: #8eef8b;
@@ -37,9 +29,9 @@
     tr:nth-child(even){background-color: #f2f2f2}
 
 </style>
+@stop
 
-</head>
-    <body>
+@section('contenido')
         <div class="container">
             <br>
             <div align="right">
@@ -49,13 +41,13 @@
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th>#</th>
-                            <th>Nombre</th>
-                            <th>Opcion</th>
+                            <th><font color="white">#</font></th>
+                            <th><font color="white">Nombre</font></th>
+                            <th><font color="white">Opcion</font></th>
                         </tr>
                     </thead>
                         <tbody>
-                            @foreach($Categorias as $u)
+                            @foreach($Categoriasp as $u)
                                 <tr>
                                     <td>{{$u->id}}</td>
                                     <td>{{$u->nombre}}</td>
@@ -66,8 +58,7 @@
                             @endforeach
                         </tbody>
                 </table>
-                {!! $Categorias->render() !!}
+                {!! $Categoriasp->render() !!}
             </div>
         </div>
-    </body>
-</html>
+@stop
