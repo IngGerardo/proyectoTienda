@@ -27,10 +27,19 @@
 			<input type="text" class="form-control" name="descripcion" required value="{{$a->descripcion}}">
 		</div>
 		
+		
 		<div class="form-group">
-			<label for="tipo">Tipo</label>
-			<input type="number" class="form-control" name="tipo" required value="{{$a->tipo}}">
-		</div>
+							<label for="tipo">Selecciona una genero</label>
+                                               <select class="form-control" id="tipo" name="tipo">
+                                               		@if($a->tipo==1)
+												  <option value="1">Mujeres</option>
+												   <option value="2">Hombres</option>
+												  @elseif($a->tipo==2)
+												 <option value="2">Hombres</option>
+												 <option value="1">Mujeres</option>
+												 @endif
+												</select>
+						</div>
 		<input type="submit" class="btn btn-primary" value="Actualizar">
 		<a href="{{url('/editarArticulos')}}" class="btn btn-danger">Cancelar</a>
 	</form>
