@@ -48,7 +48,6 @@
     <body>
       <div class="container">
             <br>
-            <div align="right">
               <h1>Mostrar inventario</h1>   
             <div class="table-responsive">
                 <table class="table table-hover">
@@ -67,51 +66,77 @@
                                     <td>{{$inv->descripcion}}</td>
                                     <td>{{$inv->cantidad}}</td>
                                     <td>
-                                        <a href="" data-target="#dataagregar" data-toggle="modal" data-id="{{ $inv->id }}">
+                                        <a href="" data-target="#{{$inv->id}}a" data-toggle="modal" data-id="{{ $inv->id }}">
                                           <button type="button" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-plus"></span> Agregar</button>
                                         </a>
-                                        <a href="" data-target="#databorrar" data-toggle="modal" data-id="{{ $inv->id }}">
+                                        <a href="" data-target="#{{$inv->id}}" data-toggle="modal" data-id="{{ $inv->id }}">
                                           <button type="button" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-erase"></span> Borrar</button>
                                         </a>
-                                        <form action="{{ url('/eliminarProducto') }}" method="POST" style="display:inline;">
+                                        <form action="{{ url('/eliminarProducto/') }}{{$inv->id}}" method="POST" style="display:inline;">
                                           <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                           <input type="hidden" id="id" name="id">
-                                          <button type="submit" class="btn btn-primary btn-xs"><span class="fa fa-times" aria-hidden="true">Eliminar</button>
+                                          <button type="submit" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-remove"></span>Quitar</button>
                                         </form>
                                     </td>
                                 </tr>
+                                <!--Modal-->
+                              <div id="{{ $inv->id }}" class="modal fade" role="dialog">
+                                  <div class="modal-dialog">
+                                    <div class="modal-content">
+                                      <div class="modal-header modal-header-success">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <font color="white">
+                                         <h4 class="modal-title" align="center"><span class="glyphicon glyphicon-erase"></span><font color="white">&nbsp;Borrar</font></h4>
+                                        </font>
+                                      </div>
+                                      <div class="modal-body">
+                                          <b>Introduzca la cantidad de "{{ $inv->descripcion }}" a borrar:</b><br><br>
+                                          <div align="center">
+                                          <form action="{{url('/eliminarProInv')}}/{{$inv->id}}" method='POST'>
+                                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                            <input type="hidden" name="id" value="{{$inv->id}}">
+                                            <input name="eliminar" type="text" class="form-control" placeholder="Cantidad" required pattern="[0-9]*">
+                                            <br>
+                                            <input type="submit" class="btn btn-primary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <a href="{{url('/inventario')}}" class="btn btn-danger" align="center">Cancelar</a>
+                                          </form >
+                                       </div>
+                                              <!--contenido-->
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div id="{{ $inv->id }}a" class="modal fade" role="dialog">
+                                  <div class="modal-dialog">
+                                    <div class="modal-content">
+                                      <div class="modal-header modal-header-success">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <font color="white">
+                                         <h4 class="modal-title" align="center"><span class="glyphicon glyphicon-plus"></span><font color="white">&nbsp;Agregar</font></h4>
+                                        </font>
+                                      </div>
+                                      <div class="modal-body">
+                                          <b>Introduzca la cantidad de "{{ $inv->descripcion }}" a agregar:</b><br><br>
+                                          <div align="center">
+                                          <form action="{{url('/agregarProInv')}}/{{$inv->id}}" method='POST'>
+                                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                            <input type="hidden" name="id" value="{{$inv->id}}">
+                                            <input name="eliminar" type="text" class="form-control" placeholder="Cantidad" required pattern="[0-9]*">
+                                            <br>
+                                            <input type="submit" class="btn btn-primary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <a href="{{url('/inventario')}}" class="btn btn-danger" align="center">Cancelar</a>
+                                          </form >
+                                       </div>
+                                              <!--contenido-->
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
                             @endforeach
                         </tbody>
                 </table>
             </div>
         </div>
-        <!--Modal-->
-          <div id="databorrar" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header modal-header-success">
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
-              <font color="white">
-               <h4 class="modal-title" align="center"><span class="glyphicon glyphicon-erase"></span><font color="white">&nbsp;Borrar</font></h4>
-              </font>
-            </div>
-            <div class="modal-body">
-                <b>Introduzca la cantidad de "{{ $inv->descripcion }}" a borrar:</b><br><br>
-                <div align="center">
-                <form action="{{url('/eliminarProInv')}}/{{$inv->id}}" method='POST'>
-                  <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                  <input type="hidden" name="id" value="{{$inv->id}}">
-                  <input name="eliminar" type="text" class="form-control" placeholder="Cantidad" required pattern="[0-9]*">
-                  <br>
-                  <input type="submit" class="btn btn-primary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  <a href="{{url('/inventario')}}" class="btn btn-danger" align="center">Cancelar</a>
-                </form >
-             </div>
-                    <!--contenido-->
-            </div>
-          </div>
-        </div>
-      </div>
       <!--Modal-->
           <div id="dataagregar" class="modal fade" role="dialog">
         <div class="modal-dialog">
@@ -139,6 +164,7 @@
         </div>
       </div>
 
+      
 <script type="text/javascript">
       $(document).ready(function(){
       $('[data-toggle="modal"]').tooltip();
