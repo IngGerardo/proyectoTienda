@@ -30,13 +30,9 @@ public function guardarArticulos(Request $request){
 	$nuevo= new articulos();
     	$nuevo->codigo=$request->input('codigo');
     	$nuevo->precio=$request->input('precio');
-    	$nuevo->cantidad=$request->input('cantidad');
     	$nuevo->descripcion=$request->input('descripcion');
     	$nuevo->tipo=$request->input('tipo');
-    	$nuevo->likee=0;
-    	$nuevo->dislike=0;
     	$nuevo->save();
-    	return Redirect('/registraArticulos');
 }
 
 
@@ -108,6 +104,7 @@ public function actualizarArticuloEd($id, Request $datos)
         $articulo = articulos::find($id);
             	$articulo->codigo=$datos->input('codigo');
             	$articulo->precio=$datos->input('precio');
+                $articulo->cantidad=$datos->input('cantidad');
             	$articulo->descripcion=$datos->input('descripcion');
             	$articulo->tipo=$datos->input('tipo');
             	$articulo->save();
@@ -155,5 +152,42 @@ public function eliminarC($id)
             return Redirect('/comentarioss');
     }
 
+public function consulmas()
+    {
+        $articulo2 = DB::table('articulos')
+        ->select('articulos.descripcion','articulos.precio','articulos.id','articulos.likee','articulos.dislike')
+        ->orderby('likee','DESC')
+        ->take(4)
+        ->get();
+
+        $categorias = categorias::all();
+
+        $articulo = DB::table('articulos')
+        ->select('articulos.descripcion','articulos.precio','articulos.id','articulos.likee','articulos.dislike')
+        ->orderby('created_at','DESC')
+        ->take(4)
+        ->get();
+
+        return view('principal', compact('articulo','articulo2','categorias'));
+    }
+
+public function consulmasP()
+    {
+         $articulo = DB::table('articulos')
+        ->select('articulos.descripcion','articulos.precio','articulos.id','articulos.likee','articulos.dislike')
+        ->orderby('created_at','DESC')
+        ->take(4)
+        ->get();
+
+        $categorias = categorias::all();
+
+        $articulo2 = DB::table('articulos')
+        ->select('articulos.descripcion','articulos.precio','articulos.id','articulos.likee','articulos.dislike')
+        ->orderby('likee','DESC')
+        ->take(4)
+        ->get();
+        
+        return view('principal', compact('articulo','articulo2','categorias'));
+    }
 }
 

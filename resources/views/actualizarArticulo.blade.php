@@ -5,6 +5,9 @@
 @stop
 
 @section('contenido')
+<br>
+<div class="container">
+<div class="row">	
 <div class="col-xs-12">
 				<div class="panel panel-primary">
 					<div class="panel-heading">
@@ -21,6 +24,10 @@
 			<label for="precio">Precio</label>
 			<input type="number" class="form-control" name="precio" required value="{{$a->precio}}">
 		</div>
+
+		<div class="form-group">
+			<label for="cantidad">Cantidad</label>
+			<input type="number" class="form-control" name="cantidad" required value="{{$a->cantidad}}">
 
 		<div class="form-group">
 			<label for="descripcion">Descripcion</label>
@@ -44,6 +51,8 @@
 		<a href="{{url('/editarArticulos')}}" class="btn btn-danger">Cancelar</a>
 	</form>
 </div>
+	</div>
+	</div>
 	</div>
 	</div>
 @stop
