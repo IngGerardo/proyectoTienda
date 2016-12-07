@@ -70,6 +70,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="top-right">
 					<ul>
 			                @if (Auth::guest())
+			                	<li><a href="{{ url('/comentarioss') }}">Comentarios</a></li>
 	                            <li><a href="{{ url('/login') }}">Login</a></li>
 	                            <li><a href="{{ url('/register') }}">Registrar</a></li>
 	                        @else
