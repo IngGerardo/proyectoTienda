@@ -35,7 +35,7 @@
 						<div class="form-group">
 							<label for="tipo">Selecciona una genero</label>
                                                <select class="form-control" id="tipo" name="tipo">
-                                               
+                                               		<option value="0" selected>Genero</option>
 												  <option value="1">Mujeres</option>
 												  <option value="2">Hombres</option>
 												 
