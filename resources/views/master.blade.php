@@ -131,7 +131,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="container">
 					<div class="logo-nav">
 						<div class="logo-nav-left">
-							<h1><a href="{{url('/')}}">New Shop <span>Shop anywhere</span></a></h1>
+							<h1><a href="{{url('/')}}">WebShopOnline <span>Shop anywhere</span></a></h1>
 						</div>
 						<div class="logo-nav-left1">
 							<nav class="navbar navbar-default">
@@ -213,11 +213,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="cart box_1">
 								<a href="{{url('/checkout')}}">
 									<h3> <div class="total">
-										<span class="simpleCart_total"></span> (<span id="simpleCart_quantity" class="simpleCart_quantity"></span> items)</div>
+										<span class="simpleCart_total"></span> (<span id="simpleCart_quantity" class="simpleCart_quantity"></span> Articulos)</div>
 										<img src="{{ asset("images/bag.png") }}" alt="" />
 									</h3>
 								</a>
-								<p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p>
+								<p><a href="javascript:;" class="simpleCart_empty">Vaciar Carrito</a></p>
 								<div class="clearfix"> </div>
 							</div>	
 						</div>

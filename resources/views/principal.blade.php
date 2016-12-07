@@ -77,7 +77,7 @@
 									<div class="ban-top">
 										<img src="images/p3.jpg" class="img-responsive" alt=""/>
 										<div class="ban-text1">
-											<h4>Joyería</h4>
+											<h4>Blusas</h4>
 										</div>
 									</div>
 								</div>
@@ -102,121 +102,42 @@
 					<div class="container">
 						<h2 class="tittle">Nuevos artículos</h2>
 						<div class="arrivals-grids">
+						<div class="col-md-12">
+								@foreach($articulo as $a)
 							<div class="col-md-3 arrival-grid simpleCart_shelfItem">
 								<div class="grid-arr">
 									<div  class="grid-arrival">
 										<figure>		
 											<a href="#" class="new-gri" data-toggle="modal" data-target="#myModal1">
 												<div class="grid-img">
-													<img  src="images/p6.jpg" class="img-responsive" alt="">
-												</div>
-												<div class="grid-img">
-													<img  src="images/p5.jpg" class="img-responsive"  alt="">
+													 <img src="images/{{ $a->id }}.png" width="50%" class="img-responsive imagen carta">
 												</div>			
 											</a>		
 										</figure>	
 									</div>
-									<div class="ribben1">
-										<p>EN VENTA</p>
-									</div>
-									<div class="block">
-										<div class="starbox small ghosting"> </div>
-									</div>
-									<div class="women">
-										<h6><a href="{{url('/single')}}">Sed ut perspiciatis unde</a></h6>
-										<span class="size">XL / XXL / S </span>
-										<p ><del>$100.00</del><em class="item_price">$70.00</em></p>
-										<a href="#" data-text="Add To Cart" class="my-cart-b item_add">Agregar al carrito</a>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-3 arrival-grid simpleCart_shelfItem">
-								<div class="grid-arr">
-									<div  class="grid-arrival">
-										<figure>		
-											<a href="#" class="new-gri" data-toggle="modal" data-target="#myModal2">
-												<div class="grid-img">
-													<img  src="images/p7.jpg" class="img-responsive" alt="">
-												</div>
-												<div class="grid-img">
-													<img  src="images/p8.jpg" class="img-responsive"  alt="">
-												</div>			
-											</a>		
-										</figure>	
+									<div class="ribben">
+										<p>Nuevo</p>
 									</div>
 									<div class="ribben1">
-										<p>EN VENTA</p>
-									</div>
-									<div class="block">
-										<div class="starbox small ghosting"> </div>
+										<p>En Venta</p>
 									</div>
 									<div class="women">
-										<h6><a href="{{url('/single')}}">Sed ut perspiciatis unde</a></h6>
-										<span class="size">XL / XXL / S </span>
-										<p ><del>$100.00</del><em class="item_price">$70.00</em></p>
-										<a href="#" data-text="Add To Cart" class=" my-cart-b item_add">Agregar al carrito</a>
+										<div class="form-group col-xs-12">
+										<span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"> {{ $a->likee }}</span>
+            							<span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"> {{ $a->dislike }}</span>
+            							</div>
+										<h6>{{ $a->descripcion }}</h6>
+										<p ><em class="item_price">${{ $a->precio }}.00</em></p>
+										<a href="#" data-text="Add To Cart" class="my-cart-b item_add">Agregar al Carrito</a>
 									</div>
 								</div>
+								<br>
 							</div>
-							<div class="col-md-3 arrival-grid simpleCart_shelfItem">
-								<div class="grid-arr">
-									<div  class="grid-arrival">
-										<figure>		
-											<a href="#" class="new-gri" data-toggle="modal" data-target="#myModal3">
-												<div class="grid-img">
-													<img  src="images/p10.jpg" class="img-responsive" alt="">
-												</div>
-												<div class="grid-img">
-													<img  src="images/p9.jpg" class="img-responsive"  alt="">
-												</div>			
-											</a>		
-										</figure>	
-									</div>
-									<div class="ribben1">
-										<p>EN VENTA</p>
-									</div>
-									<div class="block">
-										<div class="starbox small ghosting"> </div>
-									</div>
-									<div class="women">
-										<h6><a href="{{url('/single')}}">Sed ut perspiciatis unde</a></h6>
-										<span class="size">XL / XXL / S </span>
-										<p ><del>$100.00</del><em class="item_price">$70.00</em></p>
-										<a href="#" data-text="Add To Cart" class="my-cart-b item_add">Agregar al carrito</a>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-3 arrival-grid simpleCart_shelfItem">
-								<div class="grid-arr">
-									<div  class="grid-arrival">
-										<figure>		
-											<a href="#" class="new-gri" data-toggle="modal" data-target="#myModal4">
-												<div class="grid-img">
-													<img  src="images/p11.jpg" class="img-responsive" alt="">
-												</div>
-												<div class="grid-img">
-													<img  src="images/p12.jpg" class="img-responsive"  alt="">
-												</div>			
-											</a>		
-										</figure>	
-									</div>
-									<div class="ribben1">
-										<p>EN VENTA</p>
-									</div>
-									<div class="block">
-										<div class="starbox small ghosting"> </div>
-									</div>
-									<div class="women">
-										<h6><a href="{{url('/single')}}">Sed ut perspiciatis unde</a></h6>
-										<span class="size">XL / XXL / S </span>
-										<p ><del>$100.00</del><em class="item_price">$70.00</em></p>
-										<a href="#" data-text="Add To Cart" class="my-cart-b item_add">Agregar al carrito</a>
-									</div>
-								</div>
-							</div>
+								@endforeach
 							<div class="clearfix"></div>
 						</div>
 					</div>
+				</div>
 				</div>
 			<!--new-arrivals-->
 				<!--accessories-->
@@ -258,7 +179,7 @@
 						</div>
 						<div class="col-md-4 latest-grid">
 							<div class="latest-top">
-								<img  src="images/l3.jpg" class="img-responsive"  alt="">
+								<img  src="images/c201.jpg" class="img-responsive"  alt="">
 								<div class="latest-text">
 									<h4>Joyería caballero</h4>
 								</div>
@@ -271,7 +192,7 @@
 							<div class="latest-top">
 								<img  src="images/l4.jpg" class="img-responsive"  alt="">
 								<div class="latest-text">
-									<h4>Ropa dama</h4>
+									<h4>Joyería dama</h4>
 								</div>
 							</div>
 						</div>
@@ -285,7 +206,7 @@
 						</div>
 						<div class="col-md-4 latest-grid">
 							<div class="latest-top">
-								<img  src="images/l6.jpg" class="img-responsive"  alt="">
+								<img  src="images/c200.jpg" class="img-responsive"  alt="">
 								<div class="latest-text">
 									<h4>Calzado dama</h4>
 								</div>
@@ -320,7 +241,7 @@
 										<div class="starbox small ghosting"> </div>
 									</div>
 									<div class="women">
-										<h6><a href="{{url('/single')}}">Sed ut perspiciatis unde</a></h6>
+										<h6>Sed ut perspiciatis unde</h6>
 										<span class="size">XL / XXL / S </span>
 										<p ><del>$100.00</del><em class="item_price">$70.00</em></p>
 										<a href="#" data-text="Add To Cart" class="my-cart-b item_add">Agregar al carrito</a>
