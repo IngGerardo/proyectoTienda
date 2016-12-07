@@ -13,7 +13,18 @@
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
                         {{ csrf_field() }}
-
+                        @if (session('confirmar'))
+                          <div id="alert" class="alert alert-info alert-dismissible" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true"></span>&times;</button>
+                              <strong>{{ session('confirmar') }}</strong>
+                          </div>
+                        @endif
+                        @if (session('confirmation'))
+                            <div id="alert" class="alert alert-success alert-dismissible" role="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true"></span>&times;</button>
+                                <strong>{{ session('confirmation') }}</strong>
+                            </div>
+                        @endif
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                             <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 
@@ -69,4 +80,9 @@
         </div>
     </div>
 </div>
+      <script type="text/javascript">
+            setTimeout(function() {
+                $("#alert").fadeOut(2000);
+            },4000);
+      </script>
 @stop

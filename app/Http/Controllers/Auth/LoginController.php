@@ -39,6 +39,6 @@ class LoginController extends Controller
 
     public function redirectPath()
     {
-        return auth()->user()->admin==1 ? '/admin' : '/';
+        return auth()->user()->admin==1 ? '/' : '/';
     }
 }

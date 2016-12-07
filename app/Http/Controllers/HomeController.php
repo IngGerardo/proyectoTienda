@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 
 class HomeController extends Controller
 {
@@ -11,23 +12,15 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        return view('home');
-    }
-
-    public function admin()
-    {
-        return view('home');
+    public function confirmRegister($confirm_token){
+        $clientes=User::all();
+        foreach ($clientes as $cliente) {
+            if (strcmp(md5($cliente->id), $confirm_token) == 0) {
+                User::where('id', $cliente->id)
+                ->update(['activo' => 1]);
+                break;              
+            }   
+        }
+        return redirect('/login')->with('confirmation', '¡Su cuenta ha sido verificada!, ahora puede iniciar sesión.');
     }
 }
