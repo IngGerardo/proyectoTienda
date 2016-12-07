@@ -14,9 +14,9 @@ class CreateCatArticuloTable extends Migration
     public function up()
     {
         Schema::create('cat_articulo', function (Blueprint $table) {
+            $table->increments('id');
             $table->integer('id_categoria')->unsigned();
             $table->integer('id_articulo')->unsigned();
-            $table->primary(array('id_categoria', 'id_articulo'));
             $table->timestamps();
 
             $table->foreign('id_categoria')

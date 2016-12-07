@@ -445,7 +445,7 @@
 									y el trabajo en equipo.</p>
 									<div class="social-icon" align="center">
 										<a href="https://www.facebook.com/Webshoponline2/?skip_nax_wizard=true"><i class="icon"></i></a>
-										<a href="https://twitter.com/?request_context=signup"><i class="icon1"></i></a>
+										<a href="https://twitter.com/WebShopOnlinee"><i class="icon1"></i></a>
 									</div>
 								</div>
 								<div class="col-md-3 footer-grid">

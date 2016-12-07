@@ -184,16 +184,24 @@
 
                                     </div>
 
-                                    <table>
+                                    <table class="table">
+                                      <thead class="thead-inverse">
+                                        <tr>
+                                          <th>Usuario</th>
+                                          <th>Comentario</th>
+                                        </tr>
                                         @foreach($comentarios as $C)
                                         @if($C->ide==$a->id)
+                                      </thead>
+                                      <tbody>
                                         <tr>
-                                            <th>{{$C->ide}} :</th>
-                                            <th>{{$C->coment}}</th>
+                                          <td>{{$C->usuario}}</td>
+                                          <td>{{$C->coment}}</td>
                                         </tr>
                                         @endif
                                         @endforeach
-                                  </table>
+                                      </tbody>
+                                    </table>
 
                                 </div>
                             </div>
