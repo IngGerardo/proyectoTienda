@@ -76,8 +76,11 @@ Route::get('/actualizarArticulo/{id}','articulosController@actualizarArticulo');
 Route::get('/categoriash/{id}','articulosController@articuloxcategoriah');
 Route::post('/guardarArticulos','articulosController@guardarArticulos');
 Route::get('/eliminarArticulo/{id}', 'articulosController@eliminarA');
+Route::get('/comentarioss','articulosController@comentar');
+Route::get('/eliminarComentario/{id}', 'articulosController@eliminarC');
 
 Route::get('/inventario','inventarioController@mostrarInv');
 Route::post('/eliminarProInv/{id}','inventarioController@eliminarProInv');
 Route::post('/agregarProInv/{id}','inventarioController@agregarProInv');
 Route::post('/eliminarProducto/{id}','inventarioController@eliminarProducto');
+

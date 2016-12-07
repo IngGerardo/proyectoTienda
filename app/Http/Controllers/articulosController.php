@@ -92,27 +92,30 @@ public function articuloxcategoriah($id)
 	}
 
 
-public function actualizarArticulo($id){
-	$categorias = categorias::all();
-	    $a = articulos::find($id);
+public function actualizarArticulo($id)
+    {
+    	$categorias = categorias::all();
+    	$a = articulos::find($id);
         return view('actualizarArticulo', compact('a', 'categorias'));
-}
+    }
 
-public function actualizarArticuloEd($id, Request $datos){
-$articulo = articulos::find($id);
-    	$articulo->codigo=$datos->input('codigo');
-    	$articulo->precio=$datos->input('precio');
-    	$articulo->descripcion=$datos->input('descripcion');
-    	$articulo->tipo=$datos->input('tipo');
-    	$articulo->save();
-    	return Redirect('/editarArticulos');
+public function actualizarArticuloEd($id, Request $datos)
+    {
+        $articulo = articulos::find($id);
+            	$articulo->codigo=$datos->input('codigo');
+            	$articulo->precio=$datos->input('precio');
+            	$articulo->descripcion=$datos->input('descripcion');
+            	$articulo->tipo=$datos->input('tipo');
+            	$articulo->save();
+            	return Redirect('/editarArticulos');
 
-}
+    }
 
 
- public function eliminarA($id){
-        articulos::find($id)->delete();
-        return Redirect('/editarArticulos');
+public function eliminarA($id)
+    {
+            articulos::find($id)->delete();
+            return Redirect('/editarArticulos');
     }
 
 public function comenta(Request $datos)
@@ -120,13 +123,32 @@ public function comenta(Request $datos)
         $nuevo = new comentarios();
         $nuevo->id_user=auth()->user()->id;
         $nuevo->id_arti=$datos->input('id');
-                $nuevo->comentario=$datos->input('comentario');
-                $nuevo->save();
-                
+        $nuevo->comentario=$datos->input('comentario');
+        $nuevo->save();
+                    
         if($datos->input('tipo')==1)
-        return Redirect('/categorias/'.$datos->input('categoriaId'));
+            return Redirect('/categorias/'.$datos->input('categoriaId'));
         else
-        return Redirect('/categoriash/'.$datos->input('categoriaId'));
+            return Redirect('/categoriash/'.$datos->input('categoriaId'));
+    }
+
+public function comentar()
+    {
+            $categorias = categorias::all();
+            $comentarios= DB::table('comentarios')
+            ->join('users','comentarios.id_user','=','users.id')
+            ->join('articulos','comentarios.id_arti','=','articulos.id')
+            ->join('cat_articulo','cat_articulo.id_articulo','=', 'articulos.id')
+            ->select('comentarios.comentario as coment','users.nombre as usuario','articulos.id as ide','comentarios.id')
+            ->get();
+
+            return view('comentarioss', compact('comentarios','categorias'));
+    }
+
+public function eliminarC($id)
+    {
+            comentarios::find($id)->delete();
+            return Redirect('/comentarioss');
     }
 
 }
