@@ -165,7 +165,7 @@
                                                 <button type="submit" class="btn btn-warning">Agregar al carrito <span class="fa fa-plus-circle" aria-hidden="true"></button>
                                                 </form >-->
                                         
-                                            <form action="{{ url('/agregarCompra') }}" method="POST" style="display:inline;">
+                                            <form action="{{url('/mostrarCompra')}}/{{$a->id}}"  method="POST" style="display:inline;">
                                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                                 <input type="hidden" id="id" name="id">
                                                 <button type="submit" class="btn btn-warning">Agregar al carrito <span class="fa fa-plus-circle" aria-hidden="true"></button>

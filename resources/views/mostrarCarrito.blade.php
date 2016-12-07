@@ -34,65 +34,42 @@
 @section('contenido')
  <div class="container">
             <br>
-              <h1>Mostrar inventario</h1><br>   
+              <h1>Mostrar carrito</h1><br>   
             <div class="table-responsive">
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th><font color="white">#</font></th>
-                            <th><font color="white">Articulo</font></th>
+                            <th><font color="white">Código</font></th>
+                            <th><font color="white">Precio</font></th>
+                            <th><font color="white">Descripción</font></th>
+                            <th><font color="white">Fecha</font></th>
                             <th><font color="white">Cantidad</font></th>
+                            <th><font color="white">Pago</font></th>
                             <th><font color="white">Opciones</font></th>
                         </tr>
                     </thead>
                         <tbody>
-                            @foreach($articulo as $inv)
+                            @foreach($ventas as $ven)
                                 <tr>
-                                    <td>{{$inv->id}}</td>
-                                    <td>{{$inv->descripcion}}</td>
-                                    <td>{{$inv->cantidad}}</td>
+                                    <td>{{$ven->codigo}}</td>
+                                    <td>{{$ven->precio}}</td>
+                                    <td>{{$ven->descripcion}}</td>
+                                    <td>{{$ven->fecha}}</td>
+                                    <td>{{$ven->canti}}</td>
+                                    <td>{{$ven->pago}}</td>
                                     <td>
-                                        <a href="" data-target="#{{$inv->id}}a" data-toggle="modal" data-id="{{ $inv->id }}">
-                                          <button type="button" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-plus"></span> Agregar</button>
+                                        <a href="" data-target="{{$ven->artid}}" data-toggle="modal" data-id="{{ $ven->id }}">
+                                          <button type="button" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-edit"></span> Agregar</button>
                                         </a>
-                                        <a href="" data-target="#{{$inv->id}}" data-toggle="modal" data-id="{{ $inv->id }}">
-                                          <button type="button" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-erase"></span> Borrar</button>
-                                        </a>
-                                        <form action="{{ url('/eliminarProducto') }}/{{$inv->id}}" method="POST" style="display:inline;">
+                                        <form action="{{ url('/eliminarProducto') }}" method="POST" style="display:inline;">
                                           <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                           <input type="hidden" id="id" name="id">
-                                          <button type="submit" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-remove"></span>Quitar</button>
+                                          <button type="submit" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-remove"></span> Quitar</button>
                                         </form>
                                     </td>
                                 </tr>
                                 <!--Modal-->
-                              <div id="{{ $inv->id }}" class="modal fade" role="dialog">
-                                  <div class="modal-dialog">
-                                    <div class="modal-content">
-                                      <div class="modal-header modal-header-success">
-                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                        <font color="white">
-                                         <h4 class="modal-title" align="center"><span class="glyphicon glyphicon-erase"></span><font color="white">&nbsp;Borrar</font></h4>
-                                        </font>
-                                      </div>
-                                      <div class="modal-body">
-                                          <b>Introduzca la cantidad de "{{ $inv->descripcion }}" a borrar:</b><br><br>
-                                          <div align="center">
-                                          <form action="{{url('/eliminarProInv')}}/{{$inv->id}}" method='POST'>
-                                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                            <input type="hidden" name="id" value="{{$inv->id}}">
-                                            <input name="eliminar" type="text" class="form-control" placeholder="Cantidad" required pattern="[0-9]*">
-                                            <br>
-                                            <input type="submit" class="btn btn-primary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                            <a href="{{url('/inventario')}}" class="btn btn-danger" align="center">Cancelar</a>
-                                          </form >
-                                       </div>
-                                              <!--contenido-->
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div id="{{ $inv->id }}a" class="modal fade" role="dialog">
+                                <div id="{{$ven->artid}}" class="modal fade" data-id="{{ $ven->id }} {{ $ven->artid }}"role="dialog">
                                   <div class="modal-dialog">
                                     <div class="modal-content">
                                       <div class="modal-header modal-header-success">
@@ -102,15 +79,15 @@
                                         </font>
                                       </div>
                                       <div class="modal-body">
-                                          <b>Introduzca la cantidad de "{{ $inv->descripcion }}" a agregar:</b><br><br>
+                                          <b>Introduzca la cantidad de a agregar:</b><br><br>
                                           <div align="center">
-                                          <form action="{{url('/agregarProInv')}}/{{$inv->id}}" method='POST'>
+                                          <form action="{{url('/agregarProCarrito')}}/{{$ven->id}}" method='POST'>
                                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                            <input type="hidden" name="id" value="{{$inv->id}}">
+                                            <input type="hidden" name="id" value="">
                                             <input name="agregar" type="text" class="form-control" placeholder="Cantidad" required pattern="[0-9]*">
                                             <br>
                                             <input type="submit" class="btn btn-primary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                            <a href="{{url('/inventario')}}" class="btn btn-danger" align="center">Cancelar</a>
+                                            <a href="{{url('/mostrarCompra')}}/{{$ven->artid}}" class="btn btn-danger" align="center">Cancelar</a>
                                           </form >
                                        </div>
                                               <!--contenido-->
@@ -118,13 +95,21 @@
                                     </div>
                                   </div>
                                 </div>
+
                             @endforeach
                         </tbody>
                 </table>
-            </div>
+            </div> 
+            <b>COSTO ENVIO:</b><br>
+            <b>SUBTOTAL:</b><br>
+            <b>TOTAL:</b>
+            <form action="{{url('/eliminarProInv')}}" method='POST'>
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                  <input type="hidden" name="id" value="">
+                  <br>
+                      <input type="submit" value="Realizar compra" class="btn btn-primary">
+            </form >
         </div>
-
-
       
 <script type="text/javascript">
       $(document).ready(function(){

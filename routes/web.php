@@ -89,3 +89,5 @@ Route::post('/agregarProInv/{id}','inventarioController@agregarProInv');
 Route::post('/eliminarProducto/{id}','inventarioController@eliminarProducto');
 Route::get('/', 'articulosController@consulmas');
 
+Route::post('/mostrarCompra/{id}','ventasController@mostrarCarrito');
+
