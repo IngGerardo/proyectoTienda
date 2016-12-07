@@ -99,6 +99,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<li><a href="{{url('/importarCSV')}}">Importar CSV</a></li>
 								<li><a href="{{url('/inventario')}}">Inventario</a></li>
 		                        <li><a href="{{url('/consultaCategorias')}}">Categorias</a></li>
+		                        <li><a href="{{url('/comentarioss')}}">Comentarios</a></li>
+
 		                        <li class="dropdown">
 	                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
 	                                    {{ Auth::user()->nombre }} <span class="caret"></span>

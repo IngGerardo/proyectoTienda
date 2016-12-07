@@ -25,6 +25,11 @@ class categoriaController extends Controller
     	return view('consultaCategorias', compact('categorias','Categoriasp'));
     }
 
+    public function regcat(){
+        $categorias = categorias::all();
+        return view('registroCategorias', compact('categorias'));
+    }
+
     public function eliminar($id){
         categorias::find($id)->delete();
         return Redirect('/consultaCategorias');
@@ -33,7 +38,12 @@ class categoriaController extends Controller
     public function like($id,$idp){
         $cate = categorias::all();
         $arti = DB::table('articulos')
-        ->select('articulos.likee as puntos')
+        ->select('articulos.likee as puntos','articulos.tipo as tipo')
+        ->where('id', '=', $id)
+        ->first();
+
+        $tipo=DB::table('articulos')
+        ->select('articulos.tipo as tipo')
         ->where('id', '=', $id)
         ->first();
 
@@ -44,8 +54,11 @@ class categoriaController extends Controller
         $ite=DB::table('articulos')
         ->where('id', $id)     
         ->update(['likee' => $pol]);
-        
-        return redirect('/categorias/'.$idp);
+
+        if($tipo->tipo==1)
+            return Redirect('/categorias/'.$idp);
+        else
+            return Redirect('/categoriash/'.$idp);
 
     }
 
@@ -53,6 +66,11 @@ class categoriaController extends Controller
         $cate = categorias::all();
         $arti = DB::table('articulos')
         ->select('articulos.dislike as punto')
+        ->where('id', '=', $id)
+        ->first();
+
+        $tipo=DB::table('articulos')
+        ->select('articulos.tipo as tipo')
         ->where('id', '=', $id)
         ->first();
 
@@ -64,7 +82,10 @@ class categoriaController extends Controller
         ->where('id', $id)     
         ->update(['dislike' => $pol]);
         
-        return redirect('/categorias/'.$idp);
+        if($tipo->tipo==1)
+            return Redirect('/categorias/'.$idp);
+        else
+            return Redirect('/categoriash/'.$idp);
 
     }
 
