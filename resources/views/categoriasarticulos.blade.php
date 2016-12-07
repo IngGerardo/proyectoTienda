@@ -171,14 +171,14 @@
                                                 <button type="submit" class="btn btn-warning">Agregar al carrito <span class="fa fa-plus-circle" aria-hidden="true"></button>
                                                 </form >
                                         </div>
-                                    <form action="{{url('/guardarcomentario')}}" method="POST">
-                                        <input type="hidden" name="_token" value="{{csrf_token()}}">
-                                        <input type="hidden" name="categoriaId" value="{{ $a->categoriaId }}">
-                                        <input type="hidden" name="id" value="{{ $a->id }}">
-                                        <input type="hidden" name="tipo" value="{{ $a->tipo }}">
-                                        <label for="comment">Comentarios:</label>
-                                        <textarea name="comentario" class="form-control" rows="2"></textarea><br>
-                                        <input type="submit" class="btn btn-primary">
+                                        <form action="{{url('/guardarcomentario')}}" method="POST">
+                                            <input type="hidden" name="_token" value="{{csrf_token()}}">
+                                            <input type="hidden" name="categoriaId" value="{{ $a->categoriaId }}">
+                                            <input type="hidden" name="id" value="{{ $a->id }}">
+                                            <input type="hidden" name="tipo" value="{{ $a->tipo }}">
+                                            <label for="comment">Comentarios:</label>
+                                            <textarea name="comentario" class="form-control" rows="2"></textarea><br>
+                                            <input type="submit" class="btn btn-primary">
                                         </form>
                                         <br>
 
@@ -213,9 +213,4 @@
     @endforeach
     </div>
 </div>
-
-
-
-
-
 @stop

@@ -20,8 +20,9 @@ class categoriaController extends Controller
     }
 
     public function consultar(){
-        $Categorias=DB::table('categorias')->paginate(6);
-    	return view('consultaCategorias', compact('Categorias'));
+        $categorias = categorias::all();
+        $Categoriasp=DB::table('categorias')->paginate(6);
+    	return view('consultaCategorias', compact('categorias','Categoriasp'));
     }
 
     public function eliminar($id){

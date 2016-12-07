@@ -25,7 +25,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -39,6 +39,6 @@ class LoginController extends Controller
 
     public function redirectPath()
     {
-        return auth()->user()->admin==1 ? '/admin' : '/home';
+        return auth()->user()->admin==1 ? '/admin' : '/';
     }
 }

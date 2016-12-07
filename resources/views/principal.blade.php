@@ -433,8 +433,6 @@
                     <div class="fb-comments" data-href="https://www.facebook.com/starky.miranda" data-numposts="5"></div>
             </div>
             </div>
-		<!--content-->
-		<!---footer-->
 					<div class="footer-w3l">
 						<div class="container">
 							<div class="footer-grids">
@@ -450,10 +448,22 @@
 								</div>
 								<div class="col-md-3 footer-grid">
 									<h4>Mi cuenta</h4>
-									<ul>
-										<li><a href="{{url('/login')}}">Ingresar</a></li>
-										<li><a href="{{url('/register')}}"> Crear una cuenta</a></li>
-									</ul>
+							@if (Auth::guest())
+									<li><a href="{{url('/login')}}"><font color="white">Ingresar</font></a></li>
+									<li><a href="{{url('/register')}}"><font color="white"> Crear una cuenta</font></a></li>
+	                        @else
+	                        		<li>
+		                                    <a href="{{ url('/logout') }}"
+		                                        onclick="event.preventDefault();
+		                                        	document.getElementById('logout-form').submit();">
+		                                    	<font color="white">Cerrar sesión</font>
+		                                	</a>
+
+		                                <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+		                                    {{ csrf_field() }}
+		                                </form>
+		                            </li>
+							@endif
 								</div>
 								<div class="col-md-3 footer-grid">
 									<h4>Información</h4>
@@ -752,5 +762,4 @@
 					</div>
 				</div>
 			</div>
-
 @stop
