@@ -33,7 +33,6 @@
 
 @section('contenido')
  <div class="container">
-            <br>
               <h1>Compra finalizada</h1><br>   
             <div class="table-responsive">
                 <table class="table table-hover">

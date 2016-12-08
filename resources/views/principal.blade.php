@@ -125,7 +125,7 @@
             							</div>
 										<h6>{{ $a->descripcion }}</h6>
 										<p ><em class="item_price">${{ $a->precio }}.00</em></p>
-										<a href="#" data-text="Add To Cart" class="my-cart-b item_add">Agregar al Carrito</a>
+										<a href="{{url('/mostrarCompra')}}/{{$a->id}}" data-text="Add To Cart" class="my-cart-b item_add">Agregar al Carrito</a>
 									</div>
 								</div>
 								<br>
@@ -239,7 +239,7 @@
             							</div>
 										<h6>{{ $a->descripcion }}</h6>
 										<p ><em class="item_price">${{ $a->precio }}.00</em></p>
-										<a href="#" data-text="Add To Cart" class="my-cart-b item_add">Agregar al Carrito</a>
+										<a href="{{url('/mostrarCompra')}}/{{$a->id}}" data-text="Add To Cart" class="my-cart-b item_add">Agregar al Carrito</a>
 									</div>
 								</div>
 								<br>

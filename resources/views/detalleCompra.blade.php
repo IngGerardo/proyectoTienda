@@ -2,9 +2,8 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>PDF Pokemon</title>
+	<title>PDF WebShopOnline</title>
 
-	<style>
 <style type="text/css">
 
 .imag{
@@ -74,7 +73,7 @@ tr:nth-child(even){background-color: #f2f2f2}
                 </table>   
 	</div>
 	<footer>
-		<center><font FACE="sans-serif"><p>PDF webShopOnline &copy; 2016 <img src="{{ asset("images/online.ico") }}" width="4%" align="center"></p></font></center>
+		<center><font FACE="sans-serif"><p>PDF webShopOnline &copy; 2016</p></font></center>
 </footer>
 </body>
 </html>

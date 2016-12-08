@@ -64,37 +64,36 @@ Route::group(['middleware' => ['auth']], function () {
 
 	Route::get('/eliminarComentario/{id}', 'articulosController@eliminarC');
 
+	Route::post('/importar','ExcelController@importarExcel');
+	Route::post('/actualizarCatArticulo/{id}','categoriaController@actualizarCatArticulo');
+	Route::get('/registraArticulos','ExcelController@registraArticulos');
+	Route::get('/importarCSV','ExcelController@importarCSV');
+	Route::get('/editarArticulos', 'articulosController@editar');
 
+	Route::get('/asignarCategoria/{id}', 'categoriaController@asignarCategoria');
+
+	Route::get('/categorias/{id}','articulosController@articuloxcategoria');
+	Route::post('/actualizarA/{id}', 'articulosController@actualizarArticuloEd');
+	Route::get('/actualizarArticulo/{id}','articulosController@actualizarArticulo');
+	Route::get('/categoriash/{id}','articulosController@articuloxcategoriah');
+	Route::post('/guardarArticulos','articulosController@guardarArticulos');
+	Route::get('/eliminarArticulo/{id}', 'articulosController@eliminarA');
+
+	Route::get('/inventario','inventarioController@mostrarInv');
+	Route::post('/eliminarProInv/{id}','inventarioController@eliminarProInv');
+	Route::post('/agregarProInv/{id}','inventarioController@agregarProInv');
+	Route::post('/eliminarProducto/{id}','inventarioController@eliminarProducto');
+
+	Route::any('/mostrarCompra/{idArt}','ventasController@mostrarCarrito');
+	Route::any('/mostrarCompra','ventasController@carrito');
+	Route::any('/eliminarProductoCarrito/{idv}/{idart}','ventasController@eliminarProCarrito');
+	Route::any('/agregarProCarrito/{id}/{idart}','ventasController@agregarProducto');
+	Route::any('/realizarCompra/{id}','ventasController@realizarCompra');
+	Route::any('/mostrarFinalizarCompra','ventasController@mostrarFinalizarCompra');
+	Route::any('/detalleCompra','ventasController@detalleCompra');
 });
-
-
-Route::post('/importar','ExcelController@importarExcel');
-Route::post('/actualizarCatArticulo/{id}','categoriaController@actualizarCatArticulo');
-Route::get('/registraArticulos','ExcelController@registraArticulos');
-Route::get('/importarCSV','ExcelController@importarCSV');
-Route::get('/editarArticulos', 'articulosController@editar');
-
-Route::get('/asignarCategoria/{id}', 'categoriaController@asignarCategoria');
-
-Route::get('/categorias/{id}','articulosController@articuloxcategoria');
-Route::post('/actualizarA/{id}', 'articulosController@actualizarArticuloEd');
-Route::get('/actualizarArticulo/{id}','articulosController@actualizarArticulo');
-Route::get('/categoriash/{id}','articulosController@articuloxcategoriah');
-Route::post('/guardarArticulos','articulosController@guardarArticulos');
-Route::get('/eliminarArticulo/{id}', 'articulosController@eliminarA');
-
-Route::get('/inventario','inventarioController@mostrarInv');
-Route::post('/eliminarProInv/{id}','inventarioController@eliminarProInv');
-Route::post('/agregarProInv/{id}','inventarioController@agregarProInv');
-Route::post('/eliminarProducto/{id}','inventarioController@eliminarProducto');
-
-Route::any('/mostrarCompra/{idArt}','ventasController@mostrarCarrito');
-Route::any('/mostrarCompra','ventasController@carrito');
-Route::any('/eliminarProductoCarrito/{idv}/{idart}','ventasController@eliminarProCarrito');
-Route::any('/agregarProCarrito/{id}/{idart}','ventasController@agregarProducto');
-Route::any('/realizarCompra/{id}','ventasController@realizarCompra');
-Route::any('/mostrarFinalizarCompra','ventasController@mostrarFinalizarCompra');
-Route::any('/detalleCompra','ventasController@detalleCompra');
 
 Route::get('/', 'articulosController@consulmas');
 Route::get('/', 'articulosController@consulmasP');
+
+

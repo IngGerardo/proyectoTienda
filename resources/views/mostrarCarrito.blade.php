@@ -33,7 +33,6 @@
 
 @section('contenido')
  <div class="container">
-            <br>
               <h1>Mostrar carrito</h1><br>  
               <form action="{{url('/realizarCompra')}}/{{ $venta }}" method='POST'>
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
