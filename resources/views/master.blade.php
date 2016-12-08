@@ -2,6 +2,8 @@
 <html>
 <head>
 <title>WebShopOnline a E-Commerce Online Shopping Category Flat Bootstrap Responsive Website Template</title>
+
+<link rel="icon" type="image/x-icon" href="{{ asset("images/online.ico") }}"/> 
 <!--css-->
 <link rel="stylesheet" href="{{ asset("css/bootstrap.css") }}">
 <link  rel="stylesheet" href="{{ asset("css/style.css") }}">
