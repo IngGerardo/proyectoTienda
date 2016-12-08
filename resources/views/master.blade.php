@@ -2,6 +2,8 @@
 <html>
 <head>
 <title>WebShopOnline a E-Commerce Online Shopping Category Flat Bootstrap Responsive Website Template</title>
+
+<link rel="icon" type="image/x-icon" href="{{ asset("images/online.ico") }}"/> 
 <!--css-->
 <link rel="stylesheet" href="{{ asset("css/bootstrap.css") }}">
 <link  rel="stylesheet" href="{{ asset("css/style.css") }}">
@@ -131,7 +133,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="container">
 					<div class="logo-nav">
 						<div class="logo-nav-left">
-							<h1><a href="{{url('/')}}">WebShopOnline <span>Shop anywhere</span></a></h1>
+							<h1><a href="{{url('/')}}">WebShop <span align="center">Online</span></a></h1>
 						</div>
 						<div class="logo-nav-left1">
 							<nav class="navbar navbar-default">

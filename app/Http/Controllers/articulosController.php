@@ -30,9 +30,14 @@ public function guardarArticulos(Request $request){
 	$nuevo= new articulos();
     	$nuevo->codigo=$request->input('codigo');
     	$nuevo->precio=$request->input('precio');
+        $nuevo->cantidad=$request->input('cantidad');
     	$nuevo->descripcion=$request->input('descripcion');
     	$nuevo->tipo=$request->input('tipo');
+        $nuevo->likee=0;
+        $nuevo->dislike=0;
     	$nuevo->save();
+
+        return Redirect('/registraArticulos');
 }
 
 
