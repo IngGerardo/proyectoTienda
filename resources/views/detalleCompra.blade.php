@@ -72,6 +72,13 @@ tr:nth-child(even){background-color: #f2f2f2}
                         </tbody>
                 </table>   
 	</div>
+    <br>
+            <div class="col-xs-6">
+              <?PHP $totalf= ($total*0.16)+($total)+100;?>
+              <b>COSTO ENVIO: $ 100.00</b><br>
+              <b>SUBTOTAL:    {{$total}} </b><br>
+              <b>TOTAL:       {{$totalf}}</b>  
+            </div>
 	<footer>
 		<center><font FACE="sans-serif"><p>PDF webShopOnline &copy; 2016</p></font></center>
 </footer>
