@@ -18,7 +18,12 @@ class Articulosxventa extends Migration
             $table->integer('cantidad');
             $table->integer('id_articulos')->unsigned();
             $table->integer('id_ventas')->unsigned();
+            $table->integer('id_user')->unsigned();
             $table->timestamps();
+
+            $table->foreign('id_user')
+            ->references('id')->on('users')
+            ->onDelete('cascade');
 
             $table->foreign('id_articulos')
             ->references('id')->on('articulos')

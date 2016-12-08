@@ -34,7 +34,13 @@
 @section('contenido')
  <div class="container">
             <br>
-              <h1>Mostrar carrito</h1><br>   
+              <h1>Mostrar carrito</h1><br>  
+              <form action="{{url('/realizarCompra')}}/{{ $venta }}" method='POST'>
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                  <input type="hidden" name="id" value="{{$venta}}">
+                                  <br>
+                                      <input type="submit" value="Realizar compra" class="btn btn-primary">
+                            </form > 
             <div class="table-responsive">
                 <table class="table table-hover">
                     <thead>
@@ -99,12 +105,6 @@
                                 <?PHP 
                                 $total=$total+ ($ven->precio * $ven->canti);
                                 ?>
-                            <form action="{{url('/realizarCompra')}}/{{$ven->id}}/{{$ven->artid}}" method='POST'>
-                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                  <input type="hidden" name="id" value="">
-                                  <br>
-                                      <input type="submit" value="Realizar compra" class="btn btn-primary">
-                            </form >
                             @endforeach
                         </tbody>
                 </table>

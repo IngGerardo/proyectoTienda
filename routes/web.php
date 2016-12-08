@@ -88,13 +88,13 @@ Route::post('/eliminarProInv/{id}','inventarioController@eliminarProInv');
 Route::post('/agregarProInv/{id}','inventarioController@agregarProInv');
 Route::post('/eliminarProducto/{id}','inventarioController@eliminarProducto');
 
-Route::any('/mostrarCompra/{idv}','ventasController@mostrarCarrito');
+Route::any('/mostrarCompra/{idArt}','ventasController@mostrarCarrito');
+Route::any('/mostrarCompra','ventasController@carrito');
 Route::any('/eliminarProductoCarrito/{idv}/{idart}','ventasController@eliminarProCarrito');
 Route::any('/agregarProCarrito/{id}/{idart}','ventasController@agregarProducto');
-Route::any('/realizarCompra/{idv}/{idart}','ventasController@realizarCompra');
-Route::any('/mostrarFinalizarCompra/{idv}','ventasController@mostrarFinalizarCompra');
-Route::any('/detalleCompra/{idv}','ventasController@detalleCompra');
+Route::any('/realizarCompra/{id}','ventasController@realizarCompra');
+Route::any('/mostrarFinalizarCompra','ventasController@mostrarFinalizarCompra');
+Route::any('/detalleCompra','ventasController@detalleCompra');
 
 Route::get('/', 'articulosController@consulmas');
 Route::get('/', 'articulosController@consulmasP');
-Route::post('/mostrarCompra/{id}','ventasController@mostrarCarrito');

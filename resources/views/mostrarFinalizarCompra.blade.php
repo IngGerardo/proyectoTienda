@@ -72,10 +72,10 @@
               <b>TOTAL:       {{$totalf}}</b>  
             </div>
             <div class="col-xs-6" align="right">
-                                        <form action="{{ url('/detalleCompra') }}/{{ $idv }}" style="display:inline;">
+                                        <form action="{{ url('/detalleCompra') }}" method="POST" style="display:inline;">
                                           <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                           <input type="hidden" id="id" name="id">
-                                          <button type="submit" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-ok"></span> Ver detalle</button>
+                                          <button type="submit" class="btn btn-primary btn-xs" formtarget="_blank"><span class="glyphicon glyphicon-ok"></span> Ver detalle</button>
                                         </form>
             </div>  
             </div>

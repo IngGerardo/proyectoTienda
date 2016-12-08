@@ -8,86 +8,103 @@ use App\Http\Requests;
 use App\articulos;
 use App\articulosxventa;
 use App\categorias;
-use App\inventarios;
 use App\ventas;
 use DB;
 
 class ventasController extends Controller
 {
-    public function mostrarCarrito($idv)
+    public function mostrarCarrito($idArt)
 	{
+		$articulo= new articulosxventa();
+		$articulo->cantidad=1;
+		$articulo->id_articulos=$idArt;
+		$articulo->id_ventas=1;
+		$articulo->id_user=auth()->user()->id;
+		$articulo->save();
+
+		$venta=1;
+
 		$categorias = categorias::all();
-		$ventas = DB::table('inventarios')
-		->join('articulos','articulos.id','=', 'inventarios.id_articulo')
+		$ventas = DB::table('articulos')
 		->join('articulosxventa','articulos.id','=', 'articulosxventa.id_articulos')
 		->join('ventas','ventas.id','=', 'articulosxventa.id_ventas')
 		->select('articulos.cantidad','articulosxventa.cantidad as canti','ventas.fecha','ventas.pago',
 			     'articulosxventa.id','articulos.codigo','articulos.precio','articulos.descripcion', 'articulos.id as artid')
-		->where('articulosxventa.id', '=', $idv)
-		->where('articulos.cantidad', '>', 0)
+		->where('articulosxventa.id_user', '=', auth()->user()->id)
 		->where('ventas.finalizado', '=', 0)
 		->get();
-		return view('mostrarCarrito',compact('ventas','categorias'));
+
+		return view('mostrarCarrito',compact('ventas','categorias','venta'));
+	}
+	public function carrito()
+	{
+		$categorias = categorias::all();
+		$venta=1;
+		$ventas = DB::table('articulos')
+		->join('articulosxventa','articulos.id','=', 'articulosxventa.id_articulos')
+		->join('ventas','ventas.id','=', 'articulosxventa.id_ventas')
+		->select('articulos.cantidad','articulosxventa.cantidad as canti','ventas.fecha','ventas.pago',
+			     'articulosxventa.id','articulos.codigo','articulos.precio','articulos.descripcion', 'articulos.id as artid')
+		->where('articulosxventa.id_user', '=', auth()->user()->id)
+		->where('ventas.finalizado', '=', 0)
+		->get();
+
+		return view('mostrarCarrito',compact('ventas','categorias','venta'));
 	}
 	public function agregarProducto($id, $idart, Request $request)
 	{
 		$categorias = categorias::all();
-		$agregarPro = DB::table('inventarios')
-		->join('articulos','articulos.id','=', 'inventarios.id_articulo')
+		$agregarPro = DB::table('articulos')
 		->join('articulosxventa','articulos.id','=', 'articulosxventa.id_articulos')
 		->join('ventas','ventas.id','=', 'articulosxventa.id_ventas')
 		->select('articulos.cantidad','articulosxventa.cantidad as canti','ventas.fecha','ventas.pago',
 			     'articulosxventa.id','articulos.codigo','articulos.precio','articulos.descripcion')
 		->where('articulosxventa.id','=',$id)
 		->where('articulos.cantidad', '>', 0)		
-		->where('ventas.finalizado', '>', 0)
+		->where('ventas.finalizado', '=', 0)
 		->first();
         $valor=$request->input('agregar');
         $agre=$agregarPro->canti + $valor;
-
 		$valor=DB::table('articulosxventa')	
 		->where('id', '=', $id)	
 		->update(['cantidad' => $agre]);
-
 		 return Redirect('/mostrarCompra/'.$idart);
-
 	}
+
 	public function eliminarProCarrito($id, $idart){
     	articulosxventa::find($id)->delete();
 
         return Redirect('/mostrarCompra/'.$idart);
     }
-    public function realizarCompra($idv, $idart){
+    public function realizarCompra(Request $request){
     	$valor=DB::table('articulosxventa')	
     	->join('ventas','ventas.id','=', 'articulosxventa.id_ventas')
-		->where('articulosxventa.id', '=', $idv)	
-		->update(['ventas.finalizado' => 0]);
+		->where('ventas.id', '=', $request->input('id'))	
+		->update(['ventas.finalizado' => 1]);
 
-        return Redirect('/mostrarFinalizarCompra/'.$idart);
+        return Redirect('/mostrarFinalizarCompra/');
     }
-    public function mostrarFinalizarCompra($idv)
+    public function mostrarFinalizarCompra()
 	{
 		$categorias = categorias::all();
-		$ventas = DB::table('inventarios')
-		->join('articulos','articulos.id','=', 'inventarios.id_articulo')
+		$ventas = DB::table('articulos')
 		->join('articulosxventa','articulos.id','=', 'articulosxventa.id_articulos')
 		->join('ventas','ventas.id','=', 'articulosxventa.id_ventas')
 		->select('articulos.cantidad','articulosxventa.cantidad as canti','ventas.fecha','ventas.pago',
 			     'articulosxventa.id','articulos.codigo','articulos.precio','articulos.descripcion', 'articulos.id as artid')
-		->where('articulos.cantidad', '>', 0)
+		->where('articulosxventa.id_user', '=', auth()->user()->id)
 		->where('ventas.finalizado', '=', 1)
 		->get();
-		return view('mostrarFinalizarCompra',compact('ventas','categorias','idv'));
+		return view('mostrarFinalizarCompra',compact('ventas','categorias'));
 	}
-	public function detalleCompra($idv)
+	public function detalleCompra()
 	{
-		$ventas = DB::table('inventarios')
-		->join('articulos','articulos.id','=', 'inventarios.id_articulo')
+		$ventas = DB::table('articulos')
 		->join('articulosxventa','articulos.id','=', 'articulosxventa.id_articulos')
 		->join('ventas','ventas.id','=', 'articulosxventa.id_ventas')
 		->select('articulos.cantidad','articulosxventa.cantidad as canti','ventas.fecha','ventas.pago',
 			     'articulosxventa.id','articulos.codigo','articulos.precio','articulos.descripcion', 'articulos.id as artid')
-		->where('articulos.cantidad', '>', 0)
+		->where('articulosxventa.id_user', '=', auth()->user()->id)
 		->where('ventas.finalizado', '=', 1)
 		->get();
 
