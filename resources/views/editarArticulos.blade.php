@@ -20,8 +20,11 @@
 				<th>#</th>
 				<th>Código</th>
 				<th>Precio</th>
+				<th>Cantidad</th>
 				<th>Descripcion</th>
 				<th>Tipo</th>
+				<th>Likee</th>
+				<th>Dislike</th>
 				<th>Opciones</th>
 			</tr>
 		</thead>
@@ -31,8 +34,11 @@
 					<td>{{$a->id}}</td>
 					<td>{{$a->codigo}}</td>
 					<td>{{$a->precio}}</td>
+					<td>{{$a->cantidad}}</td>
 					<td>{{$a->descripcion}}</td>
 					<td>{{$a->tipo}}</td>
+					<td>{{$a->likee}}</td>
+					<th>{{$a->dislike}}</th>
 					<td>
 
 							

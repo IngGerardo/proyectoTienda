@@ -94,3 +94,7 @@ Route::any('/agregarProCarrito/{id}/{idart}','ventasController@agregarProducto')
 Route::any('/realizarCompra/{idv}/{idart}','ventasController@realizarCompra');
 Route::any('/mostrarFinalizarCompra/{idv}','ventasController@mostrarFinalizarCompra');
 Route::any('/detalleCompra/{idv}','ventasController@detalleCompra');
+
+Route::get('/', 'articulosController@consulmas');
+Route::get('/', 'articulosController@consulmasP');
+Route::post('/mostrarCompra/{id}','ventasController@mostrarCarrito');
