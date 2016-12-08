@@ -88,5 +88,9 @@ Route::post('/eliminarProInv/{id}','inventarioController@eliminarProInv');
 Route::post('/agregarProInv/{id}','inventarioController@agregarProInv');
 Route::post('/eliminarProducto/{id}','inventarioController@eliminarProducto');
 
-Route::post('/mostrarCompra/{id}','ventasController@mostrarCarrito');
-
+Route::any('/mostrarCompra/{idv}','ventasController@mostrarCarrito');
+Route::any('/eliminarProductoCarrito/{idv}/{idart}','ventasController@eliminarProCarrito');
+Route::any('/agregarProCarrito/{id}/{idart}','ventasController@agregarProducto');
+Route::any('/realizarCompra/{idv}/{idart}','ventasController@realizarCompra');
+Route::any('/mostrarFinalizarCompra/{idv}','ventasController@mostrarFinalizarCompra');
+Route::any('/detalleCompra/{idv}','ventasController@detalleCompra');

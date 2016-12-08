@@ -47,7 +47,8 @@
                             <th><font color="white">Pago</font></th>
                             <th><font color="white">Opciones</font></th>
                         </tr>
-                    </thead>
+                    </thead> 
+                    <?PHP $total=0; $totalf=0?>
                         <tbody>
                             @foreach($ventas as $ven)
                                 <tr>
@@ -56,12 +57,12 @@
                                     <td>{{$ven->descripcion}}</td>
                                     <td>{{$ven->fecha}}</td>
                                     <td>{{$ven->canti}}</td>
-                                    <td>{{$ven->pago}}</td>
+                                    <td>{{$ven->precio * $ven->canti}}</td>
                                     <td>
-                                        <a href="" data-target="{{$ven->artid}}" data-toggle="modal" data-id="{{ $ven->id }}">
+                                        <a href="" data-target="#{{$ven->artid}}" data-toggle="modal" data-id="{{ $ven->id }}">
                                           <button type="button" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-edit"></span> Agregar</button>
                                         </a>
-                                        <form action="{{ url('/eliminarProducto') }}" method="POST" style="display:inline;">
+                                        <form action="{{ url('/eliminarProductoCarrito') }}/{{ $ven->id }}/{{ $ven->artid }}" method="POST" style="display:inline;">
                                           <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                           <input type="hidden" id="id" name="id">
                                           <button type="submit" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-remove"></span> Quitar</button>
@@ -69,7 +70,7 @@
                                     </td>
                                 </tr>
                                 <!--Modal-->
-                                <div id="{{$ven->artid}}" class="modal fade" data-id="{{ $ven->id }} {{ $ven->artid }}"role="dialog">
+                                <div id="{{$ven->artid}}" class="modal fade" role="dialog">
                                   <div class="modal-dialog">
                                     <div class="modal-content">
                                       <div class="modal-header modal-header-success">
@@ -81,7 +82,7 @@
                                       <div class="modal-body">
                                           <b>Introduzca la cantidad de a agregar:</b><br><br>
                                           <div align="center">
-                                          <form action="{{url('/agregarProCarrito')}}/{{$ven->id}}" method='POST'>
+                                          <form action="{{url('/agregarProCarrito')}}/{{$ven->id}}/{{$ven->artid}}" method='POST'>
                                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                             <input type="hidden" name="id" value="">
                                             <input name="agregar" type="text" class="form-control" placeholder="Cantidad" required pattern="[0-9]*">
@@ -95,20 +96,23 @@
                                     </div>
                                   </div>
                                 </div>
-
+                                <?PHP 
+                                $total=$total+ ($ven->precio * $ven->canti);
+                                ?>
+                            <form action="{{url('/realizarCompra')}}/{{$ven->id}}/{{$ven->artid}}" method='POST'>
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                  <input type="hidden" name="id" value="">
+                                  <br>
+                                      <input type="submit" value="Realizar compra" class="btn btn-primary">
+                            </form >
                             @endforeach
                         </tbody>
                 </table>
             </div> 
-            <b>COSTO ENVIO:</b><br>
-            <b>SUBTOTAL:</b><br>
-            <b>TOTAL:</b>
-            <form action="{{url('/eliminarProInv')}}" method='POST'>
-                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                  <input type="hidden" name="id" value="">
-                  <br>
-                      <input type="submit" value="Realizar compra" class="btn btn-primary">
-            </form >
+            <?PHP $totalf= ($total*0.16)+($total)+100;?>
+            <b>COSTO ENVIO: $ 100.00</b><br>
+            <b>SUBTOTAL:    {{$total}} </b><br>
+            <b>TOTAL:       {{$totalf}}</b>
         </div>
       
 <script type="text/javascript">

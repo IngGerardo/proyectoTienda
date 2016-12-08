@@ -17,6 +17,7 @@ class Ventas extends Migration
             $table->increments('id');
             $table->date('fecha');
             $table->double('pago');
+             $table->boolean('finalizado')->default(0);
             $table->timestamps();
         });
     }
