@@ -5,6 +5,8 @@ namespace Illuminate\Foundation\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Lang;
+use App\categorias;
+use DB;
 
 trait AuthenticatesUsers
 {
@@ -17,7 +19,8 @@ trait AuthenticatesUsers
      */
     public function showLoginForm()
     {
-        return view('auth.login');
+        $categorias = categorias::all();
+        return view('auth.login', compact('categorias'));
     }
 
     /**
@@ -28,6 +31,13 @@ trait AuthenticatesUsers
      */
     public function login(Request $request)
     {
+
+        $user=DB::table('users')->where('email','=',$request->email)->first();
+        
+        if((isset($user->activo) ? $user->activo : '2') == 0){
+            return redirect('/login')->with('confirmar', '¡Para poder ingresar es necesario validar tu correo!');  
+        }
+
         $this->validateLogin($request);
 
         // If the class is using the ThrottlesLogins trait, we can automatically throttle
@@ -39,7 +49,9 @@ trait AuthenticatesUsers
             return $this->sendLockoutResponse($request);
         }
 
-        if ($this->attemptLogin($request)) {
+        $credentials = $this->credentials($request);
+
+        if ($this->guard()->attempt($credentials, $request->has('remember'))) {
             return $this->sendLoginResponse($request);
         }
 

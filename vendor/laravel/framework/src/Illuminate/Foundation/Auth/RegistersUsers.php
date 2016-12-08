@@ -5,6 +5,9 @@ namespace Illuminate\Foundation\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Auth\Events\Registered;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\confirmacionEmail;
+use App\categorias;
 
 trait RegistersUsers
 {
@@ -15,9 +18,10 @@ trait RegistersUsers
      *
      * @return \Illuminate\Http\Response
      */
-    public function showRegistrationForm()
+   public function showRegistrationForm()
     {
-        return view('auth.register');
+        $categorias = categorias::all();
+        return view('auth.register', compact('categorias'));
     }
 
     /**
@@ -32,7 +36,12 @@ trait RegistersUsers
 
         event(new Registered($user = $this->create($request->all())));
 
-        $this->guard()->login($user);
+        //enviar email de confirmacion
+        $token=md5($user->id);
+        $pass="";
+        Mail::to($user->email,$user->nombre)
+        ->send(new confirmacionEmail($user,$token,$pass));
+        //$this->guard()->login($user);
 
         return $this->registered($request, $user)
             ?: redirect($this->redirectPath());

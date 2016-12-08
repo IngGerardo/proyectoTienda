@@ -6,6 +6,7 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Password;
+use App\categorias;
 
 trait ResetsPasswords
 {
@@ -22,7 +23,8 @@ trait ResetsPasswords
      */
     public function showResetForm(Request $request, $token = null)
     {
-        return view('auth.passwords.reset')->with(
+        $categorias = categorias::all();
+        return view('auth.passwords.reset', compact('categorias'))->with(
             ['token' => $token, 'email' => $request->email]
         );
     }
