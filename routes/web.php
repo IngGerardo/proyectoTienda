@@ -69,16 +69,12 @@ Route::group(['middleware' => ['auth']], function () {
 	Route::get('/registraArticulos','ExcelController@registraArticulos');
 	Route::get('/importarCSV','ExcelController@importarCSV');
 	Route::get('/editarArticulos', 'articulosController@editar');
-
 	Route::get('/asignarCategoria/{id}', 'categoriaController@asignarCategoria');
 
-	Route::get('/categorias/{id}','articulosController@articuloxcategoria');
 	Route::post('/actualizarA/{id}', 'articulosController@actualizarArticuloEd');
 	Route::get('/actualizarArticulo/{id}','articulosController@actualizarArticulo');
-	Route::get('/categoriash/{id}','articulosController@articuloxcategoriah');
 	Route::post('/guardarArticulos','articulosController@guardarArticulos');
 	Route::get('/eliminarArticulo/{id}', 'articulosController@eliminarA');
-
 	Route::get('/inventario','inventarioController@mostrarInv');
 	Route::post('/eliminarProInv/{id}','inventarioController@eliminarProInv');
 	Route::post('/agregarProInv/{id}','inventarioController@agregarProInv');
@@ -93,7 +89,9 @@ Route::group(['middleware' => ['auth']], function () {
 	Route::any('/detalleCompra','ventasController@detalleCompra');
 });
 
-Route::get('/', 'articulosController@consulmas');
-Route::get('/', 'articulosController@consulmasP');
+	Route::get('/categoriash/{id}','articulosController@articuloxcategoriah');
+	Route::get('/categorias/{id}','articulosController@articuloxcategoria');
+	Route::get('/', 'articulosController@consulmas');
+	Route::get('/', 'articulosController@consulmasP');
 
 
