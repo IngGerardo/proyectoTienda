@@ -30,6 +30,7 @@ public function guardarArticulos(Request $request){
 	$nuevo= new articulos();
     	$nuevo->codigo=$request->input('codigo');
     	$nuevo->precio=$request->input('precio');
+        $nuevo->cantidad=$datos->input('cantidad');
     	$nuevo->descripcion=$request->input('descripcion');
     	$nuevo->tipo=$request->input('tipo');
     	$nuevo->save();
