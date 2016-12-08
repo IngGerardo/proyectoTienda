@@ -68,13 +68,14 @@ class ventasController extends Controller
 		$valor=DB::table('articulosxventa')	
 		->where('id', '=', $id)	
 		->update(['cantidad' => $agre]);
-		 return Redirect('/mostrarCompra/'.$idart);
+		 return Redirect('/mostrarCompra/');
 	}
 
 	public function eliminarProCarrito($id, $idart){
+
     	articulosxventa::find($id)->delete();
 
-        return Redirect('/mostrarCompra/'.$idart);
+        return Redirect('/mostrarCompra/');
     }
     public function realizarCompra(Request $request){
     	$valor=DB::table('articulosxventa')	
