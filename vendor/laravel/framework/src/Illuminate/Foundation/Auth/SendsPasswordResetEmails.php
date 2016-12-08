@@ -4,6 +4,7 @@ namespace Illuminate\Foundation\Auth;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Password;
+use App\categorias;
 
 trait SendsPasswordResetEmails
 {
@@ -14,6 +15,7 @@ trait SendsPasswordResetEmails
      */
     public function showLinkRequestForm()
     {
+        $categorias = categorias::all();
         return view('auth.passwords.email', compact('categorias'));
     }
 
