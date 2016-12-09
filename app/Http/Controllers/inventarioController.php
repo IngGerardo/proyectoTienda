@@ -18,6 +18,8 @@ class inventarioController extends Controller
 		$articulo = DB::table('inventarios')
 		->join('articulos','articulos.id','=', 'inventarios.id_articulo')
 		->select('articulos.descripcion','articulos.id','articulos.cantidad')
+        ->where('articulos.cantidad', '>', 0)
+        ->where('articulos.activo', '=', 1)
         ->get();
 		return view('mostrarInventario',compact('articulo','categorias'));
 	}
@@ -28,6 +30,7 @@ class inventarioController extends Controller
 		->join('articulos','articulos.id','=', 'inventarios.id_articulo')
 		->select('articulos.cantidad')
 		->where('articulos.id', '=', $id)
+		->where('articulos.activo', '=', 1)
 		->first();
         $valor=$request->input('agregar');
         $agre=$agregarPro->cantidad + $request->input('agregar');

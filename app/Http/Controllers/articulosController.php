@@ -23,7 +23,7 @@ public function categorias(){
 }
 public function editar(){
 	$categorias = categorias::all();
-	$articulos = articulos::all();
+	$articulos = articulos::where('activo','=',1)->paginate(10);
 		return view('editarArticulos', compact('categorias','articulos'));
 }
 public function guardarArticulos(Request $request){
@@ -120,8 +120,11 @@ public function actualizarArticuloEd($id, Request $datos)
 
 public function eliminarA($id)
     {
-            articulos::find($id)->delete();
-            return Redirect('/editarArticulos');
+        DB::table('articulos')
+        ->where('id', $id)     
+        ->update(['activo' => 0]);
+
+        return Redirect('/editarArticulos');
     }
 
 public function comenta(Request $datos)

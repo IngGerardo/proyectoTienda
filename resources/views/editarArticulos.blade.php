@@ -14,6 +14,7 @@
     			      <h3 class="panel-title" align="center">Editar Articulos</h3>
   				    </div>
   				    <div class="panel-body">
+  				  <div class="table-responsive">
 	<table class="table table-hover">
 		<thead>
 			<tr>
@@ -40,10 +41,6 @@
 					<td>{{$a->likee}}</td>
 					<th>{{$a->dislike}}</th>
 					<td>
-
-							
-
-
 						<a href=""   data-target="#{{ $a->id }}" class="btn btn-primary btn-xs" data-toggle="modal" data-descripcion="{{ $a->descripcion }}" data-precio="{{ $a->precio }}"
                     title="{{ $a->descripcion }}"><span class="glyphicon glyphicon-edit" aria-hidden="true">Categoria</span></a>
 							 
@@ -108,6 +105,10 @@
 
 		</tbody>
 	</table>
+	</div>
+	<div align="center">
+	{!! $articulos->render() !!}
+	</div>
 	</div>
 	</div>
 	</div>

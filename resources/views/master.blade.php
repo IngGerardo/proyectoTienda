@@ -75,7 +75,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	                            <li><a href="{{ url('/login') }}">Login</a></li>
 	                            <li><a href="{{ url('/register') }}">Registrar</a></li>
 	                        @elseif(Auth::check() && auth()->user()->admin == 0)
-			                	<li><a href="{{url('/mostrarFinalizarCompra')}}">Carrito Finalizado</a></li>
+			                	<li><a href="{{url('/mostrarFinalizarCompra')}}">Compras finalizadas</a></li>
 	                            <li class="dropdown">
 	                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
 	                                    {{ Auth::user()->nombre }} <span class="caret"></span>
